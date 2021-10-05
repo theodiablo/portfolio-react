@@ -28,5 +28,5 @@ jobs:
       - name: Deploy
         uses: jonelantha/gatsby-s3-action@v1
         with:
-          dest-s3-bucket: your_bucket
+          dest-s3-bucket: theo.camboulive.solutions
           cloudfront-id-to-invalidate: E2JKARQJ6N6ORJ
