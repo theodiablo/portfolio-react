@@ -20,21 +20,22 @@ const IndexPage = () => {
               <div className="row h-100 align-items-center justify-content-center text-center">
                 <div className="col-lg-10 align-self-end">
                   <h1 className="text-white font-weight-bold">
-                    We can use <u>IT</u> for good too!
+                    ¡El desarrollo informático puede ser verde también!
                   </h1>
+                  <hr className="divider my-4" />
                 </div>
                 <div className="col-lg-8 align-self-baseline">
                   <p className="text-white-75 font-weight-light mb-5">
-                    We can buid back a better world, with today's tools. We
-                    don't need to go back to living as our ancestors lived 100
-                    years ago to be sustainable, we can create new ways of
-                    living with the help of technology.
+                    Podemos reconstruir un mundo mejor, con las herramientas de
+                    hoy. No hace falta volver a vivir cómo hace 100 años para
+                    volver a ser sostenibles, podemos crear nuevas formas de
+                    vivir!
                   </p>
                   <a
                     className="btn btn-primary btn-xl js-scroll-trigger"
                     href="#about"
                   >
-                    Find Out More
+                    Descubrir más
                   </a>
                 </div>
               </div>
