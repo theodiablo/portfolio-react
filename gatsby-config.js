@@ -63,6 +63,7 @@ module.exports = {
       },
       __key: "pages",
     },
-    "gatsby-plugin-offline",
+    // Enable or disable Service Workers. Can be interesting?
+    //"gatsby-plugin-offline",
   ],
 };
