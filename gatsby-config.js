@@ -1,15 +1,39 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "Theo Camboulive - Tech for Good",
+    siteUrl: "https://theo.camboulive.solutions",
+    title: "Théo Camboulive - Tech for Good",
+    author: "Théo Camboulive",
   },
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
-        trackingId: "G-T8VW35DESW",
+        google: {
+          families: [
+            "Merriweather:400,300,300italic,400italic,700,700italic",
+            "Merriweather+Sans:400,700",
+          ],
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-i18n`,
+      options: {
+        langKeyDefault: "en",
+        langKeyForNull: "en",
+        prefixDefault: false,
+        useLangKeyLayout: false,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-gtag",
+      options: {
+        trackingIds: ["G-T8VW35DESW"],
+        gtagConfig: {
+          anonymize_ip: true,
+        },
       },
     },
     "gatsby-plugin-react-helmet",
@@ -39,5 +63,6 @@ module.exports = {
       },
       __key: "pages",
     },
+    "gatsby-plugin-offline",
   ],
 };
