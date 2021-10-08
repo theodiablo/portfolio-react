@@ -19,15 +19,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-i18n`,
-      options: {
-        langKeyDefault: "en",
-        langKeyForNull: "en",
-        prefixDefault: false,
-        useLangKeyLayout: false,
-      },
-    },
-    {
       resolve: "gatsby-plugin-google-gtag",
       options: {
         trackingIds: ["G-T8VW35DESW"],
@@ -51,7 +42,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: `${__dirname}/src/images/`,
       },
       __key: "images",
     },
@@ -59,9 +50,36 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: "./src/pages/",
+        path: `${__dirname}/src/pages/`,
       },
       __key: "pages",
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/locales`,
+        name: `locale`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
+        languages: [`en`, `es`, `fr`],
+        defaultLanguage: `en`,
+        // if you are using Helmet, you must include siteUrl, and make sure you add http:https
+        siteUrl: `https://theo.camboulive.solutions/`,
+        // you can pass any i18next options
+        // pass following options to allow message content as a key
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false, // not needed for react as it escapes by default
+          },
+          keySeparator: false,
+          nsSeparator: false,
+        },
+        //pages: [],
+      },
     },
     // Enable or disable Service Workers. Can be interesting?
     //"gatsby-plugin-offline",

@@ -10,6 +10,17 @@ $navbarBaseColor: $white;
     font-weight: $font-weight-bold;
     color: $gray-900;
   }
+  .language-selector {
+    .flag-icon {
+      img {
+        height: 1em;
+        margin-right: 0.5em;
+      }
+      &.current-language {
+        opacity: 0.8;
+      }
+    }
+  }
   .navbar-nav {
     .nav-item {
       &.active {

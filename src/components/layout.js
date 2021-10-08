@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Header from "./header";
 import Footer from "./footer";
+import Seo from "./seo";
 import "./layout.scss";
+
+import LanguageDetector from "i18next-browser-languagedetector";
+const languageDetector = new LanguageDetector();
+languageDetector.init();
 
 const getScrollNode = (element) => {
   return (
@@ -16,55 +21,46 @@ const isScrolled = (element) => {
   return scrollNode.scrollTop > 0;
 };
 
-export default class Layout extends React.Component {
-  constructor(props) {
-    super(props);
-    this.siteContainer = React.createRef();
-    this.state = {
-      scrolled: false,
-    };
-    this.handleScroll = this.handleScroll.bind(this);
-  }
+const Layout = (props) => {
+  const [scrolled, setScrolled] = useState(false);
+  const siteContainer = React.createRef();
 
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
-    const element = this.siteContainer.current;
-    this.setState({
-      scrolled: isScrolled(element),
-    });
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-  }
-
-  handleScroll() {
-    const element = this.siteContainer.current;
-    this.setState({
-      scrolled: isScrolled(element),
-    });
-  }
-
-  render() {
-    let className = "site-container";
-    if (this.props.className) className += ` ${this.props.className}`;
-    if (this.state.scrolled) className += " navbar-scrolled";
-
-    if (process.env.NODE_ENV === "development") {
-      return (
-        <div className={className} ref={this.siteContainer} id="page-top">
-          <Header />
-          <main>{this.props.children}</main>
-          <Footer />
-        </div>
-      );
-    } else {
-      return <h1>Page under development!</h1>;
+  useEffect(() => {
+    function handleScroll() {
+      const element = siteContainer.current;
+      setScrolled(isScrolled(element));
     }
-  }
-}
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    // Especifica cómo sanear este efecto:
+    return function cleanup() {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+
+  //if (process.env.NODE_ENV === "development") {
+  let className = "site-container";
+  if (props.className) className += ` ${props.className}`;
+  if (scrolled) className += " navbar-scrolled";
+  return (
+    <>
+      <Seo title={props.title} />
+      <div className={className} ref={siteContainer} id="page-top">
+        <Header />
+        <main>{props.children}</main>
+        <Footer />
+      </div>
+    </>
+  );
+  // } else {
+  //   return <h1>Page under development!</h1>;
+  // }
+};
+
+export default Layout;
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  title: PropTypes.string,
 };

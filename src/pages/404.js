@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { graphql } from "gatsby";
+import { Link, Trans } from "gatsby-plugin-react-i18next";
 
 // styles
 const pageStyles = {
@@ -28,27 +29,40 @@ const codeStyles = {
 const NotFoundPage = () => {
   return (
     <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
+      <title>
+        <Trans>Not found</Trans>
+      </title>
+      <h1 style={headingStyles}>
+        <Trans>Page not found</Trans>
+      </h1>
       <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
+        <Trans
+          i18nKey="404SorryMessage"
+          defaults="Sorry, <0>{{ icon }}</0> we couldn’t find what you were looking for."
+          values={{ icon: "😔" }}
+        ></Trans>
         <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
+        <Link to="/">
+          <Trans i18nKey="404BackHome">Go home</Trans>
+        </Link>
+        .
       </p>
     </main>
   );
 };
 
 export default NotFoundPage;
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

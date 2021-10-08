@@ -9,8 +9,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
+import { useI18next } from "gatsby-plugin-react-i18next";
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, meta, title }) {
+  const { languages, language, originalPath, defaultLanguage } = useI18next();
+
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,6 +22,7 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -30,10 +34,21 @@ function SEO({ description, lang, meta, title }) {
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        language,
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={languages
+        .filter((lang) => lang !== language)
+        .map((lang) => {
+          return {
+            rel: "alternate",
+            hreflang: lang,
+            href: `${site.siteMetadata.siteUrl}${
+              lang === defaultLanguage ? "" : "/" + lang
+            }${originalPath}`,
+          };
+        })}
       meta={[
         {
           name: `description`,
@@ -73,14 +88,12 @@ function SEO({ description, lang, meta, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
   meta: [],
   description: ``,
 };
 
 SEO.propTypes = {
   description: PropTypes.string,
-  lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 };

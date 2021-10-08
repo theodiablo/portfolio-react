@@ -1,12 +1,15 @@
 import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 import Layout from "../components/layout";
+import { graphql } from "gatsby";
+import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next";
 
 // markup
 const IndexPage = () => {
+  const { t } = useTranslation();
   return (
     <main>
-      <Layout>
+      <Layout title={t("homePage.title")}>
         <>
           <div className="masthead">
             <div className="background">
@@ -20,22 +23,27 @@ const IndexPage = () => {
               <div className="row h-100 align-items-center justify-content-center text-center">
                 <div className="col-lg-10 align-self-end">
                   <h1 className="text-white font-weight-bold">
-                    We can use <u>IT</u> for good too!
+                    <Trans i18nKey="homePage.headerTitle">
+                      <span className="text-primary">Green</span> IT Solutions
+                    </Trans>
                   </h1>
                 </div>
                 <div className="col-lg-8 align-self-baseline">
                   <p className="text-white-75 font-weight-light mb-5">
-                    We can buid back a better world, with today's tools. We
-                    don't need to go back to living as our ancestors lived 100
-                    years ago to be sustainable, we can create new ways of
-                    living with the help of technology.
+                    <Trans i18nKey="homePage.headerDescription">
+                      While the use of Information Technology is causing many
+                      harm on a global level, I believe that it can help us
+                      rebuilding a better and more sustainable world. I am
+                      focused on this misson, helping sustainable companies
+                      across the globe.
+                    </Trans>
                   </p>
-                  <a
+                  <Link
                     className="btn btn-primary btn-xl js-scroll-trigger"
-                    href="#about"
+                    to="#about"
                   >
-                    Find Out More
-                  </a>
+                    <Trans i18nKey="homePage.headerButton">Find Out More</Trans>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -47,3 +55,17 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
