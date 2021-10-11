@@ -6,5 +6,15 @@
 
   "language.en": "English",
   "language.es": "Español",
-  "language.fr": "Français"
+  "language.fr": "Français",
+
+  "Contact me": "Contact me",
+  "Full Name": "Full Name",
+  "Enter your full name": "Enter your full name",
+  "Email address": "Email address",
+  "Enter your email adress": "Enter your email adress",
+  "Message": "Message",
+  "Enter your message": "Enter your message",
+  "Send Message": "Send Message",
+  "Thank you for reaching out. I will get back to you shortly!": "Thank you for reaching out. I will get back to you shortly!"
 }
