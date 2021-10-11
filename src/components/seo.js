@@ -11,6 +11,8 @@ import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import { useI18next } from "gatsby-plugin-react-i18next";
 
+import shareImg from "../images/share-img.jpg";
+
 function SEO({ description, meta, title }) {
   const { languages, language, originalPath, defaultLanguage } = useI18next();
 
@@ -65,6 +67,10 @@ function SEO({ description, meta, title }) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          name: `og:image`,
+          content: site.siteMetadata.siteUrl + shareImg,
         },
         {
           name: `twitter:card`,
