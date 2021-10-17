@@ -13,12 +13,14 @@ html {
 // Custom horizontal rules
 hr.divider {
   max-width: 3.25rem;
-  border-width: 0.2rem;
+  height: 0.2rem;
   border-color: $primary;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 hr.light {
-  border-color: $white;
+  color: $white;
 }
 
 // Button restyling
@@ -47,4 +49,17 @@ hr.light {
 
 .modal-backdrop.show {
   opacity: 0.8;
+}
+
+// Swiper fix
+.swiper {
+  padding: 0 2rem;
+}
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  right: 0 !important;
+}
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  left: 0 !important;
 }

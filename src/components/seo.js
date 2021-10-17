@@ -45,7 +45,7 @@ function SEO({ description, meta, title }) {
         .map((lang) => {
           return {
             rel: "alternate",
-            hreflang: lang,
+            hrefLang: lang,
             href: `${site.siteMetadata.siteUrl}${
               lang === defaultLanguage ? "" : "/" + lang
             }${originalPath}`,

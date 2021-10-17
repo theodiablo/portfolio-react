@@ -17,8 +17,11 @@ const getScrollNode = (element) => {
 };
 
 const isScrolled = (element) => {
-  const scrollNode = getScrollNode(element);
-  return scrollNode.scrollTop > 0;
+  if (element) {
+    const scrollNode = getScrollNode(element);
+    return scrollNode.scrollTop > 0;
+  }
+  return false;
 };
 
 const Layout = (props) => {

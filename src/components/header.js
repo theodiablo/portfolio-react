@@ -2,6 +2,7 @@ import React from "react";
 import Scrollspy from "react-scrollspy";
 import { Navbar, Nav, Dropdown } from "react-bootstrap";
 import { Link, Trans, useI18next } from "gatsby-plugin-react-i18next";
+import Scroller from "../components/scroller";
 
 import i18next from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
@@ -25,6 +26,8 @@ const Header = () => {
     originalPath,
   } = useI18next();
 
+  Scroller.handleAnchorScroll = Scroller.handleAnchorScroll.bind(this);
+
   return (
     <>
       <Navbar
@@ -34,9 +37,9 @@ const Header = () => {
         collapseOnSelect={true}
       >
         <div className="container d-flex justify-content-between">
-          <a className="navbar-brand js-scroll-trigger" href="#page-top">
+          <Link className="navbar-brand js-scroll-trigger" to="/">
             <Trans>Théo Camboulive Solutions</Trans>
-          </a>
+          </Link>
           <Navbar.Toggle aria-controls="navbarResponsive" />
           <Navbar.Collapse id="navbarResponsive">
             <Nav className="navbar-nav ms-auto my-2 my-lg-0">
@@ -48,22 +51,38 @@ const Header = () => {
                 offset={-75}
               >
                 <li className="nav-item">
-                  <Nav.Link className={"js-scroll-trigger"} href="#about">
+                  <Nav.Link
+                    className={"js-scroll-trigger"}
+                    href="#about"
+                    onClick={Scroller.handleAnchorScroll}
+                  >
                     About
                   </Nav.Link>
                 </li>
                 <li className="nav-item">
-                  <Nav.Link className={"js-scroll-trigger"} href="#services">
+                  <Nav.Link
+                    className={"js-scroll-trigger"}
+                    href="#services"
+                    onClick={Scroller.handleAnchorScroll}
+                  >
                     Services
                   </Nav.Link>
                 </li>
                 <li className="nav-item">
-                  <Nav.Link className={"js-scroll-trigger"} href="#portfolio">
+                  <Nav.Link
+                    className={"js-scroll-trigger"}
+                    href="#portfolio"
+                    onClick={Scroller.handleAnchorScroll}
+                  >
                     Portfolio
                   </Nav.Link>
                 </li>
                 <li className="nav-item">
-                  <Nav.Link className={"js-scroll-trigger"} href="#contact">
+                  <Nav.Link
+                    className={"js-scroll-trigger"}
+                    href="#contact"
+                    onClick={Scroller.handleAnchorScroll}
+                  >
                     Contact
                   </Nav.Link>
                 </li>
@@ -93,9 +112,10 @@ const Header = () => {
                               className="nav-item"
                             >
                               <Link
-                                className="nav-link p-0"
+                                className="nav-link p-0 text-white"
                                 to={originalPath}
                                 language={lang}
+                                style={{ "--bs-text-opacity": 0.8 }}
                               >
                                 <span className="flag-icon">
                                   <img

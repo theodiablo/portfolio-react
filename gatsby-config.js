@@ -12,7 +12,7 @@ module.exports = {
       options: {
         google: {
           families: [
-            "Merriweather:400,300,300italic,400italic,700,700italic",
+            "Josefin+Sans:400,300,300italic,400italic,700,700italic",
             "Merriweather+Sans:400,700",
           ],
         },
