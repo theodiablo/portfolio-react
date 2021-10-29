@@ -73,7 +73,7 @@ const IndexPage = () => {
                     <Trans>Théo Camboulive - Full Stack Freelancer</Trans>
                   </h2>
                   <hr className="divider light my-4" />
-                  <div className="d-flex align-items-center mb-4">
+                  <div className="d-md-flex align-items-center mb-4">
                     <div className="flex-shrink-0  col-8 col-md-3 m-auto pb-3">
                       <StaticImage
                         src="../images/profile.jpg"
