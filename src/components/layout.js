@@ -41,33 +41,33 @@ const Layout = (props) => {
     };
   });
 
-  if (process.env.NODE_ENV === "development") {
-    let className = "site-container";
-    if (props.className) className += ` ${props.className}`;
-    if (scrolled) className += " navbar-scrolled";
-    return (
-      <>
-        <Seo title={props.title} />
-        <div className={className} ref={siteContainer} id="page-top">
-          <Header />
-          <main>{props.children}</main>
-          <Footer />
-        </div>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <Seo title="Work in progress" />
-        <div ref={siteContainer} id="page-top">
-          <main>
-            <h1>Page under development!</h1>
-          </main>
-          <Footer />
-        </div>
-      </>
-    );
-  }
+  // if (process.env.NODE_ENV === "development") {
+  let className = "site-container";
+  if (props.className) className += ` ${props.className}`;
+  if (scrolled) className += " navbar-scrolled";
+  return (
+    <>
+      <Seo title={props.title} />
+      <div className={className} ref={siteContainer} id="page-top">
+        <Header />
+        <main>{props.children}</main>
+        <Footer />
+      </div>
+    </>
+  );
+  // } else {
+  //   return (
+  //     <>
+  //       <Seo title="Work in progress" />
+  //       <div ref={siteContainer} id="page-top">
+  //         <main>
+  //           <h1>Page under development!</h1>
+  //         </main>
+  //         <Footer />
+  //       </div>
+  //     </>
+  //   );
+  // }
 };
 
 export default Layout;
