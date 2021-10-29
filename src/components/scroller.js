@@ -1,11 +1,19 @@
+import { navigate } from "gatsby";
+
 export default class Scroller {
   static handleAnchorScroll(e) {
     e.preventDefault();
-    const element = e.target;
+    let element = e.target;
     let id = element.getAttribute("href");
 
-    if (id[0] === "/") {
-      id = id.substr(1);
+    if (id.lastIndexOf("/") >= 0) {
+      const destinationPath = id.substring(0, id.lastIndexOf("/") + 1);
+      if (destinationPath !== window.location.pathname) {
+        navigate(id);
+        return;
+      } else {
+        id = id.substring(id.lastIndexOf("/") + 1);
+      }
     }
 
     const document =

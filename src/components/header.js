@@ -51,44 +51,40 @@ const Header = () => {
                 offset={-75}
               >
                 <li className="nav-item">
-                  <Nav.Link
-                    className={"js-scroll-trigger"}
-                    href="#about"
+                  <Link
+                    to="/#about"
+                    className="js-scroll-trigger nav-link"
                     onClick={Scroller.handleAnchorScroll}
                   >
                     About
-                  </Nav.Link>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <Nav.Link
-                    className={"js-scroll-trigger"}
-                    href="#services"
+                  <Link
+                    className="js-scroll-trigger nav-link"
+                    to="/#services"
                     onClick={Scroller.handleAnchorScroll}
                   >
                     Services
-                  </Nav.Link>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <Nav.Link
-                    className={"js-scroll-trigger"}
-                    href="#portfolio"
-                    onClick={Scroller.handleAnchorScroll}
-                  >
+                  <Link className="nav-link" to="/portfolio">
                     Portfolio
-                  </Nav.Link>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <Nav.Link
-                    className={"js-scroll-trigger"}
+                    className="js-scroll-trigger nav-link"
                     href="#contact"
                     onClick={Scroller.handleAnchorScroll}
                   >
-                    Contact
+                    <Trans>Contact</Trans>
                   </Nav.Link>
                 </li>
 
                 <li className="nav-item dropdown language-selector">
-                  <Dropdown>
+                  <Dropdown className="">
                     <Dropdown.Toggle
                       variant="dark"
                       id="dropdown-basic"
@@ -102,7 +98,7 @@ const Header = () => {
                       </span>
                       <Trans>language.{currentLanguage}</Trans>
                     </Dropdown.Toggle>
-                    <Dropdown.Menu variant="dark">
+                    <Dropdown.Menu variant="dark" className="position-absolute">
                       {avaliableLanguages.map(
                         (lang) =>
                           lang !== currentLanguage && (

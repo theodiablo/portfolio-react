@@ -34,7 +34,7 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="contact-form container pb-5">
+    <div className="page-section contact-form container" id="contact">
       <Row className="justify-content-center">
         <div className="col-xl-5 col-lg-6 col-md-8">
           <div className="text-center">

@@ -19,6 +19,9 @@ import { Card, Col, Row } from "react-bootstrap";
 
 const IndexPage = () => {
   const { t } = useTranslation();
+  
+  Scroller.handleAnchorScroll = Scroller.handleAnchorScroll.bind(this)
+
   return (
     <main>
       <Layout title={t("homePage.title")}>
