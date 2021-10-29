@@ -52,6 +52,11 @@ function SEO({ description, meta, title }) {
           };
         })}
       meta={[
+        // TODO: Remove noindex when page ready for Google
+        {
+          name: "robots",
+          content: "noindex",
+        },
         {
           name: `description`,
           content: metaDescription,

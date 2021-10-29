@@ -4,6 +4,12 @@
   "homePage.headerDescription": "While the use of Information Technology is causing many harm on a global level, I believe that it can help us rebuilding a better and more sustainable world. I am focused on this misson, helping sustainable companies across the globe.",
   "homePage.headerButton": "Find Out More",
 
+  "portfolioPage.title": "Portfolio",
+  "portfolioPage.headerTitle": "<0>Projects</0> I worked on",
+  "portfolioPage.headerDescription": "Here, you can find a list of projects I have been working on during the last years. I have started to focus on sustainablity not long ago, this is why you can find all kind of experiences here.",
+  "portfolioPage.headerButton": "See projects",
+  "Projects": "Projects",
+
   "language.en": "English",
   "language.es": "Español",
   "language.fr": "Français",

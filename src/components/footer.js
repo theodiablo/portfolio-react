@@ -4,7 +4,7 @@ import ContactForm from "./contactForm";
 export default class Footer extends React.Component {
   render() {
     return (
-      <footer className="bg-light py-5">
+      <footer className="bg-light pb-5">
         <ContactForm />
         <div className="container">
           <div className="small text-center text-muted">

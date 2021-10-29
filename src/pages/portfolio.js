@@ -1,142 +1,208 @@
 import { StaticImage } from "gatsby-plugin-image";
-import * as React from "react";
+import React, { useState } from "react";
 import Layout from "../components/layout";
 import Scroller from "../components/scroller";
 import { graphql } from "gatsby";
+import Img from "gatsby-image";
 import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import {
-  faChartLine,
-  faCogs,
-  faGlobe,
-  faHeart,
-  faLaptopCode,
-  faShoppingCart,
-  faSitemap,
-} from "@fortawesome/free-solid-svg-icons";
-import { Card, Col, Row } from "react-bootstrap";
+import PortfolioModal from "../components/portfolio/modal";
+import PortfolioCarousel from "../components/portfolio/carousel";
 
-const IndexPage = () => {
+const PortfolioPage = (props) => {
   const { t } = useTranslation();
+  const [modalShow, setModalShow] = useState(false);
+  const [modalCurrent, setModalCurrent] = useState(0);
 
   Scroller.handleAnchorScroll = Scroller.handleAnchorScroll.bind(this);
 
+  function handlePortfolioClick(index, e) {
+    e.preventDefault();
+    setModal(true, index);
+  }
+
+  function setModal(isShown, current) {
+    setModalShow(isShown);
+    setModalCurrent(current);
+  }
+
   return (
     <main>
-      <Layout title={t("homePage.title")}>
+      <Layout title={t("portfolioPage.title")}>
         <>
-          <div className="masthead" id="head">
+          <div className="portfoliohead" id="head">
             <div className="background">
               <StaticImage
                 className="w-100 h-100"
-                src="../images/bg-masthead.jpg"
+                src="../images/bg-portfolio.jpg"
                 alt="background"
               />
             </div>
-            <div className="container h-100">
-              <div className="row h-100 align-items-center justify-content-center text-center">
+            <div className="container py-5">
+              <div className="row align-items-center justify-content-center text-center">
                 <div className="col-lg-10 align-self-end">
                   <h1 className="text-white font-weight-bold">
-                    <Trans i18nKey="portfolio.headerTitle">
-                      <span className="text-primary">Portfolio</span>
+                    <Trans i18nKey="portfolioPage.headerTitle">
+                      <span className="text-info">Projects</span> I worked on
                     </Trans>
                   </h1>
                 </div>
                 <div className="col-lg-8 align-self-baseline">
                   <p className="text-white-75 font-weight-light mb-5">
-                    <Trans i18nKey="homePage.headerDescription">
-                      While the use of Information Technology is causing many
-                      harm on a global level, I believe that it can help us
-                      rebuilding a better and more sustainable world. I am
-                      focused on this misson, helping sustainable companies
-                      across the globe.
+                    <Trans i18nKey="portfolioPage.headerDescription">
+                      Here, you can find a list of projects I have been working
+                      on during the last years. I have started to focus on
+                      sustainablity not long ago, this is why you can find all
+                      kind of experiences here.
                     </Trans>
                   </p>
                   <Link
-                    className="btn btn-primary btn-xl js-scroll-trigger"
-                    to="#about"
+                    className="btn btn-info btn-xl js-scroll-trigger text-capitalize"
+                    to="/portfolio/#projects"
                     onClick={Scroller.handleAnchorScroll}
                   >
-                    <Trans i18nKey="homePage.headerButton">Find Out More</Trans>
+                    <Trans i18nKey="portfolioPage.headerButton">
+                      See projects
+                    </Trans>
                   </Link>
                 </div>
               </div>
             </div>
           </div>
 
-          <section className="page-section bg-primary" id="projects">
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-lg-8 text-center">
-                  <h2 className="text-white mt-0">
-                    <Trans>Théo Camboulive - Full Stack Freelancer</Trans>
-                  </h2>
-                  <hr className="divider light my-4" />
-                  <div className="d-flex align-items-center mb-4">
-                    <div className="flex-shrink-0 col-3">
-                      <StaticImage
-                        src="../images/profile.jpg"
-                        alt="Théo Camboulive"
-                        className="img-thumbnail rounded-circle"
-                      />
-                    </div>
-                    <div
-                      className="flex-grow-1 ms-3 text-white"
-                      style={{ "--bs-text-opacity": 0.8 }}
-                    >
-                      <p>
-                        <Trans i18nKey="about.description1">
-                          After years working as a Full Stack developer for
-                          several companies{" "}
-                          <i>(Sopra Steria, Criteo, King - AKA Candy Crush)</i>,
-                          I decided to leave this world and start working
-                          exclusively for sustainable businesses.
-                        </Trans>
-                      </p>
-                      <p>
-                        <Trans i18nKey="about.description2">
-                          With my life partner, we co-founded{" "}
-                          <a
-                            href="https://instagram.com/luffa.shop"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="link-light"
-                          >
-                            Luffa Shop
-                          </a>
-                          , an e-commerce focused on reducing trash for spanish
-                          households. In 3 years we planted 3500+ trees and
-                          avoided about 10 000 kg of plastic waste!
-                        </Trans>
-                      </p>
-                      <p>
-                        <Trans i18nKey="about.description3">
-                          During all this time, I have acquired a wide range of
-                          technical and business knowledge, which enables me to
-                          work through many different business situation.
-                        </Trans>
-                      </p>
-                    </div>
-                  </div>
+          <section className="bg-primary" id="projects">
+            <div className="container-fluid p-0">
+              <div className="row g-0">
+                <div className="col-lg-4 col-sm-6">
                   <a
-                    className="btn btn-light btn-xl js-scroll-trigger"
-                    href="#services"
-                    onClick={Scroller.handleAnchorScroll}
+                    className="portfolio-box"
+                    href="img/portfolio/fullsize/1.jpg"
+                    onClick={handlePortfolioClick.bind(this, 0)}
                   >
-                    <Trans>Know me better</Trans>
+                    <Img
+                      fluid={
+                        props.data.images.edges[0].node.childImageSharp.fluid
+                      }
+                    />
+                    <div className="portfolio-box-caption">
+                      <div className="project-category text-white-50">
+                        Category
+                      </div>
+                      <div className="project-name">Project Name</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-lg-4 col-sm-6">
+                  <a
+                    className="portfolio-box"
+                    href="img/portfolio/fullsize/2.jpg"
+                    onClick={handlePortfolioClick.bind(this, 1)}
+                  >
+                    <Img
+                      fluid={
+                        props.data.images.edges[1].node.childImageSharp.fluid
+                      }
+                    />
+                    <div className="portfolio-box-caption">
+                      <div className="project-category text-white-50">
+                        Category
+                      </div>
+                      <div className="project-name">Project Name</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-lg-4 col-sm-6">
+                  <a
+                    className="portfolio-box"
+                    href="img/portfolio/fullsize/3.jpg"
+                    onClick={handlePortfolioClick.bind(this, 2)}
+                  >
+                    <Img
+                      fluid={
+                        props.data.images.edges[2].node.childImageSharp.fluid
+                      }
+                    />
+                    <div className="portfolio-box-caption">
+                      <div className="project-category text-white-50">
+                        Category
+                      </div>
+                      <div className="project-name">Project Name</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-lg-4 col-sm-6">
+                  <a
+                    className="portfolio-box"
+                    href="images/portfolio/fullsize/4.jpg"
+                    onClick={handlePortfolioClick.bind(this, 3)}
+                  >
+                    <Img
+                      fluid={
+                        props.data.images.edges[3].node.childImageSharp.fluid
+                      }
+                    />
+                    <div className="portfolio-box-caption">
+                      <div className="project-category text-white-50">
+                        Category
+                      </div>
+                      <div className="project-name">Project Name</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-lg-4 col-sm-6">
+                  <a
+                    className="portfolio-box"
+                    href="img/portfolio/fullsize/5.jpg"
+                    onClick={handlePortfolioClick.bind(this, 4)}
+                  >
+                    <Img
+                      fluid={
+                        props.data.images.edges[4].node.childImageSharp.fluid
+                      }
+                    />
+                    <div className="portfolio-box-caption">
+                      <div className="project-category text-white-50">
+                        Category
+                      </div>
+                      <div className="project-name">Project Name</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-lg-4 col-sm-6">
+                  <a
+                    className="portfolio-box"
+                    href="img/portfolio/fullsize/6.jpg"
+                    onClick={handlePortfolioClick.bind(this, 5)}
+                  >
+                    <Img
+                      fluid={
+                        props.data.images.edges[5].node.childImageSharp.fluid
+                      }
+                    />
+                    <div className="portfolio-box-caption p-3">
+                      <div className="project-category text-white-50">
+                        Category
+                      </div>
+                      <div className="project-name">Project Name</div>
+                    </div>
                   </a>
                 </div>
               </div>
             </div>
           </section>
+          <PortfolioModal show={modalShow} onHide={() => setModal(false, 0)}>
+            <PortfolioCarousel
+              images={props.data.images.edges}
+              current={modalCurrent}
+            />
+          </PortfolioModal>
         </>
       </Layout>
     </main>
   );
 };
 
-export default IndexPage;
+export default PortfolioPage;
 
 export const query = graphql`
   query ($language: String!) {
@@ -146,6 +212,20 @@ export const query = graphql`
           ns
           data
           language
+        }
+      }
+    }
+    images: allFile(
+      filter: { relativePath: { glob: "portfolio/fullsize/*.jpg" } }
+      sort: { fields: name }
+    ) {
+      edges {
+        node {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }

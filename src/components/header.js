@@ -26,8 +26,6 @@ const Header = () => {
     originalPath,
   } = useI18next();
 
-  Scroller.handleAnchorScroll = Scroller.handleAnchorScroll.bind(this);
-
   return (
     <>
       <Navbar
@@ -45,7 +43,13 @@ const Header = () => {
             <Nav className="navbar-nav ms-auto my-2 my-lg-0">
               <Scrollspy
                 className="navbar-nav"
-                items={["about", "services", "portfolio", "contact"]}
+                items={[
+                  "about",
+                  "services",
+                  "portfolio",
+                  "contact",
+                  "projects",
+                ]}
                 currentClassName="active"
                 rootEl={"#mainNav"}
                 offset={-75}
@@ -69,7 +73,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/portfolio">
+                  <Link className="nav-link" to="/portfolio/">
                     Portfolio
                   </Link>
                 </li>
@@ -105,10 +109,11 @@ const Header = () => {
                             <Dropdown.Item
                               eventKey={lang}
                               key={lang}
-                              className="nav-item"
+                              className="nav-item p-0"
+                              as="div"
                             >
                               <Link
-                                className="nav-link p-0 text-white"
+                                className="nav-link p-0 text-white px-3 py-1"
                                 to={originalPath}
                                 language={lang}
                                 style={{ "--bs-text-opacity": 0.8 }}

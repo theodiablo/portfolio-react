@@ -74,7 +74,7 @@ const IndexPage = () => {
                   </h2>
                   <hr className="divider light my-4" />
                   <div className="d-flex align-items-center mb-4">
-                    <div className="flex-shrink-0 col-3">
+                    <div className="flex-shrink-0  col-8 col-md-3 m-auto pb-3">
                       <StaticImage
                         src="../images/profile.jpg"
                         alt="Théo Camboulive"
@@ -82,7 +82,7 @@ const IndexPage = () => {
                       />
                     </div>
                     <div
-                      className="flex-grow-1 ms-3 text-white"
+                      className="flex-grow-1 ms-md-3 text-white"
                       style={{ "--bs-text-opacity": 0.8 }}
                     >
                       <p>
@@ -229,7 +229,7 @@ const IndexPage = () => {
                   </Card>
                 </Col>
               </Row>
-              <Row xl="5" lg="4" md="3" sm="2" className="gy-2">
+              <Row xl="5" lg="4" md="3" sm="2" className="gy-2 gx-1">
                 {Array.from({ length: 5 }).map((_, idx) => {
                   const icons = [
                     faCogs,
@@ -239,8 +239,8 @@ const IndexPage = () => {
                     faShoppingCart,
                   ];
                   return (
-                    <Col>
-                      <Card className="shadow p-3 mx-1 rounded-3">
+                    <Col key={idx}>
+                      <Card className="shadow mx-1 rounded-3">
                         <Card.Body>
                           <Card.Title>
                             <FontAwesomeIcon
@@ -332,7 +332,7 @@ const IndexPage = () => {
             </div>
           </section>
 
-          <section className="page-section bg-dark text-white">
+          {/* <section className="page-section bg-dark text-white">
             <div className="container text-center">
               <h2 className="mb-4">Free Download at Start Bootstrap!</h2>
               <a
@@ -342,7 +342,7 @@ const IndexPage = () => {
                 Download Now!
               </a>
             </div>
-          </section>
+          </section> */}
         </>
       </Layout>
     </main>
