@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Scrollspy from "react-scrollspy";
 import { Navbar, Nav, Dropdown } from "react-bootstrap";
 import { Link, Trans, useI18next } from "gatsby-plugin-react-i18next";
@@ -25,6 +25,12 @@ const Header = () => {
     language: currentLanguage,
     originalPath,
   } = useI18next();
+  const [expanded, setExpanded] = useState(false);
+
+  const handleClickOnMenuItem = function (target) {
+    setExpanded(false);
+    Scroller.handleAnchorScroll(target);
+  };
 
   return (
     <>
@@ -32,13 +38,15 @@ const Header = () => {
         className="navbar navbar-expand-lg navbar-light fixed-top py-3"
         id="mainNav"
         expand="lg"
-        collapseOnSelect={true}
+        expanded={expanded}
       >
         <div className="container d-flex justify-content-between">
           <Link className="navbar-brand js-scroll-trigger" to="/">
             <Trans>Théo Camboulive Solutions</Trans>
           </Link>
-          <Navbar.Toggle aria-controls="navbarResponsive" />
+          <Navbar.Toggle
+            onClick={() => setExpanded(expanded ? false : "expanded")}
+          />
           <Navbar.Collapse id="navbarResponsive">
             <Nav className="navbar-nav ms-auto my-2 my-lg-0">
               <Scrollspy
@@ -58,7 +66,7 @@ const Header = () => {
                   <Link
                     to="/#about"
                     className="js-scroll-trigger nav-link"
-                    onClick={Scroller.handleAnchorScroll}
+                    onClick={handleClickOnMenuItem}
                   >
                     About
                   </Link>
@@ -67,13 +75,17 @@ const Header = () => {
                   <Link
                     className="js-scroll-trigger nav-link"
                     to="/#services"
-                    onClick={Scroller.handleAnchorScroll}
+                    onClick={handleClickOnMenuItem}
                   >
                     Services
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/portfolio/">
+                  <Link
+                    className="nav-link"
+                    to="/portfolio/"
+                    onClick={() => setExpanded(false)}
+                  >
                     Portfolio
                   </Link>
                 </li>
@@ -81,7 +93,7 @@ const Header = () => {
                   <Nav.Link
                     className="js-scroll-trigger nav-link"
                     href="#contact"
-                    onClick={Scroller.handleAnchorScroll}
+                    onClick={handleClickOnMenuItem}
                   >
                     <Trans>Contact</Trans>
                   </Nav.Link>
