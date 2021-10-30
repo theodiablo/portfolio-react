@@ -3,9 +3,8 @@ import Layout from '../components/layout'
 import Scroller from '../components/scroller'
 import { graphql } from 'gatsby'
 import { Link, Trans, useTranslation } from 'gatsby-plugin-react-i18next'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { StaticImage } from 'gatsby-plugin-image'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faChartLine,
   faCogs,
