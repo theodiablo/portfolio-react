@@ -17,7 +17,6 @@ const ContactForm = () => {
     setLoading(true)
     event.preventDefault()
     event.stopPropagation()
-    console.log(messageInput.current.value)
 
     axios
       .post('https://getform.io/f/5579c9c4-ebc6-4632-ab2c-64610939afe7', {
