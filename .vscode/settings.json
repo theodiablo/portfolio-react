@@ -1,0 +1,18 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true
+    },
+    "[scss]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true
+    },
+    "eslint.format.enable": true,
+    "prettier.requireConfig": true,
+    "prettier.enable": true,
+    "html.format.endWithNewline": true
+}

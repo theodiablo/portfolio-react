@@ -1,22 +1,22 @@
-import * as React from "react";
-import { graphql } from "gatsby";
-import { Link, Trans } from "gatsby-plugin-react-i18next";
+import * as React from 'react'
+import { graphql } from 'gatsby'
+import { Link, Trans } from 'gatsby-plugin-react-i18next'
 
 // styles
 const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
+  color: '#232129',
+  padding: '96px',
+  fontFamily: '-apple-system, Roboto, sans-serif, serif',
+}
 const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
   maxWidth: 320,
-};
+}
 
 const paragraphStyles = {
   marginBottom: 48,
-};
+}
 
 // markup
 const NotFoundPage = () => {
@@ -32,7 +32,7 @@ const NotFoundPage = () => {
         <Trans
           i18nKey="404SorryMessage"
           defaults="Sorry, <0>{{ icon }}</0> we couldn’t find what you were looking for."
-          values={{ icon: "😔" }}
+          values={{ icon: '😔' }}
         ></Trans>
         <br />
         <Link to="/">
@@ -41,10 +41,10 @@ const NotFoundPage = () => {
         .
       </p>
     </main>
-  );
-};
+  )
+}
 
-export default NotFoundPage;
+export default NotFoundPage
 
 export const query = graphql`
   query ($language: String!) {
@@ -58,4 +58,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

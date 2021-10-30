@@ -54,7 +54,7 @@ $navbarBaseColor: $white;
     }
     .navbar-nav {
       .nav-item {
-        .nav-link {
+        .nav-link, .language-selector {
           color: fade-out($navbarBaseColor, 0.3);
           padding: 0 1rem;
           &:hover {
@@ -67,6 +67,28 @@ $navbarBaseColor: $white;
           }
         }
       }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    .container{
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+
+      .navbar-brand{
+        margin-right: 0.5rem;
+      }
+      .navbar-nav .nav-item{
+        text-align: center;
+      }
+
+      .language-selector{
+        text-align: end;
+      }
+    }
+  }
+  @include media-breakpoint-only(xs) {
+    .navbar-brand{
+      font-size: 1.1rem;
     }
   }
 }

@@ -1,5 +1,5 @@
-import React from "react";
-import ContactForm from "./contactForm";
+import React from 'react'
+import ContactForm from './contactForm'
 
 export default class Footer extends React.Component {
   render() {
@@ -12,6 +12,6 @@ export default class Footer extends React.Component {
           </div>
         </div>
       </footer>
-    );
+    )
   }
 }

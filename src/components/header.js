@@ -1,36 +1,36 @@
-import React, { useState } from "react";
-import Scrollspy from "react-scrollspy";
-import { Navbar, Nav, Dropdown } from "react-bootstrap";
-import { Link, Trans, useI18next } from "gatsby-plugin-react-i18next";
-import Scroller from "../components/scroller";
+import React, { useState } from 'react'
+import Scrollspy from 'react-scrollspy'
+import { Navbar, Nav, Dropdown } from 'react-bootstrap'
+import { Link, Trans, useI18next } from 'gatsby-plugin-react-i18next'
+import Scroller from '../components/scroller'
 
-import i18next from "i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
+import i18next from 'i18next'
+import LanguageDetector from 'i18next-browser-languagedetector'
 
-import flagGb from "../images/flag-gb.svg";
-import flagEs from "../images/flag-es.svg";
-import flagFr from "../images/flag-fr.svg";
+import flagGb from '../images/flag-gb.svg'
+import flagEs from '../images/flag-es.svg'
+import flagFr from '../images/flag-fr.svg'
 
-i18next.use(LanguageDetector);
+i18next.use(LanguageDetector)
 
 const languageFlagCountry = {
   en: flagGb,
   es: flagEs,
   fr: flagFr,
-};
+}
 
 const Header = () => {
   const {
     languages: avaliableLanguages,
     language: currentLanguage,
     originalPath,
-  } = useI18next();
-  const [expanded, setExpanded] = useState(false);
+  } = useI18next()
+  const [expanded, setExpanded] = useState(false)
 
   const handleClickOnMenuItem = function (target) {
-    setExpanded(false);
-    Scroller.handleAnchorScroll(target);
-  };
+    setExpanded(false)
+    Scroller.handleAnchorScroll(target)
+  }
 
   return (
     <>
@@ -42,24 +42,24 @@ const Header = () => {
       >
         <div className="container d-flex justify-content-between">
           <Link className="navbar-brand js-scroll-trigger" to="/">
-            <Trans>Théo Camboulive Solutions</Trans>
+            Théo Camboulive <span className="text-primary">Solutions</span>
           </Link>
           <Navbar.Toggle
-            onClick={() => setExpanded(expanded ? false : "expanded")}
+            onClick={() => setExpanded(expanded ? false : 'expanded')}
           />
           <Navbar.Collapse id="navbarResponsive">
             <Nav className="navbar-nav ms-auto my-2 my-lg-0">
               <Scrollspy
                 className="navbar-nav"
                 items={[
-                  "about",
-                  "services",
-                  "portfolio",
-                  "contact",
-                  "projects",
+                  'about',
+                  'services',
+                  'portfolio',
+                  'contact',
+                  'projects',
                 ]}
                 currentClassName="active"
-                rootEl={"#mainNav"}
+                rootEl={'#mainNav'}
                 offset={-75}
               >
                 <li className="nav-item">
@@ -99,8 +99,8 @@ const Header = () => {
                   </Nav.Link>
                 </li>
 
-                <li className="nav-item dropdown language-selector">
-                  <Dropdown className="">
+                <li className="dropdown language-selector">
+                  <Dropdown className="" align="end">
                     <Dropdown.Toggle
                       variant="dark"
                       id="dropdown-basic"
@@ -128,7 +128,7 @@ const Header = () => {
                                 className="nav-link p-0 text-white px-3 py-1"
                                 to={originalPath}
                                 language={lang}
-                                style={{ "--bs-text-opacity": 0.8 }}
+                                style={{ '--bs-text-opacity': 0.8 }}
                               >
                                 <span className="flag-icon">
                                   <img
@@ -150,7 +150,7 @@ const Header = () => {
         </div>
       </Navbar>
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

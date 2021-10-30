@@ -13,8 +13,11 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "format": "prettier --write \"src/**/*.{js,jsx,json,md}\""
+    "format": "prettier --write \"src/**/*.{js,jsx,json,md,scss,css}\""
   },
+  "browserslist": [
+    ">5%"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
@@ -54,6 +57,10 @@
     "sass": "^1.42.1"
   },
   "devDependencies": {
-    "prettier": "^2.4.1"
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.26.1",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
+    "prettier": "2.4.1"
   }
 }

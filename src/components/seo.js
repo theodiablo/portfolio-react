@@ -1,20 +1,13 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
-import { useI18next } from "gatsby-plugin-react-i18next";
-
-import shareImg from "../images/share-img.jpg";
+import shareImg from '../images/share-img.jpg'
 
 function SEO({ description, meta, title }) {
-  const { languages, language, originalPath, defaultLanguage } = useI18next();
+  const { languages, language, originalPath, defaultLanguage } = useI18next()
 
   const { site } = useStaticQuery(
     graphql`
@@ -29,9 +22,9 @@ function SEO({ description, meta, title }) {
         }
       }
     `
-  );
+  )
 
-  const metaDescription = description || site.siteMetadata.description;
+  const metaDescription = description || site.siteMetadata.description
 
   return (
     <Helmet
@@ -44,18 +37,18 @@ function SEO({ description, meta, title }) {
         .filter((lang) => lang !== language)
         .map((lang) => {
           return {
-            rel: "alternate",
+            rel: 'alternate',
             hrefLang: lang,
             href: `${site.siteMetadata.siteUrl}${
-              lang === defaultLanguage ? "" : "/" + lang
+              lang === defaultLanguage ? '' : '/' + lang
             }${originalPath}`,
-          };
+          }
         })}
       meta={[
         // TODO: Remove noindex when page ready for Google
         {
-          name: "robots",
-          content: "noindex",
+          name: 'robots',
+          content: 'noindex',
         },
         {
           name: `description`,
@@ -95,18 +88,18 @@ function SEO({ description, meta, title }) {
         },
       ].concat(meta)}
     />
-  );
+  )
 }
 
 SEO.defaultProps = {
   meta: [],
   description: ``,
-};
+}
 
 SEO.propTypes = {
   description: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-};
+}
 
-export default SEO;
+export default SEO

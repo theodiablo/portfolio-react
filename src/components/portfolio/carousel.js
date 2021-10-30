@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Carousel } from "react-bootstrap";
-import Img from "gatsby-image";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Carousel } from 'react-bootstrap'
+import Img from 'gatsby-image'
 
-import "./carousel.scss";
+import './carousel.scss'
 
 const PortfolioCarousel = ({ images, current }) => {
   const carouselItems = images.map((image, index) => (
@@ -19,7 +19,7 @@ const PortfolioCarousel = ({ images, current }) => {
         </figcaption>
       </figure>
     </Carousel.Item>
-  ));
+  ))
 
   return (
     <Carousel
@@ -30,12 +30,12 @@ const PortfolioCarousel = ({ images, current }) => {
     >
       {carouselItems}
     </Carousel>
-  );
-};
+  )
+}
 
 PortfolioCarousel.propTypes = {
   images: PropTypes.array.isRequired,
   current: PropTypes.number.isRequired,
-};
+}
 
-export default PortfolioCarousel;
+export default PortfolioCarousel
