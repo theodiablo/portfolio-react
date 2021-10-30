@@ -5,6 +5,7 @@ module.exports = {
     author: "Théo Camboulive",
   },
   plugins: [
+    "gatsby-plugin-webpack-bundle-analyser-v2",
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     {
