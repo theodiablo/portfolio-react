@@ -8,7 +8,6 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 import PortfolioModal from '../components/portfolio/modal'
 import PortfolioCarousel from '../components/portfolio/carousel'
-import { SSRProvider } from 'react-bootstrap'
 
 const PortfolioPage = ({ data }) => {
   const { t } = useTranslation()
@@ -28,192 +27,190 @@ const PortfolioPage = ({ data }) => {
   }
 
   return (
-    <SSRProvider>
-      <main>
-        <Layout title={t('portfolioPage.title')}>
-          <>
-            <div className="portfoliohead" id="head">
-              <div className="background">
-                <StaticImage
-                  className="w-100 h-100"
-                  src="../images/bg-portfolio.jpg"
-                  alt="background"
-                />
-              </div>
-              <div className="container py-5">
-                <div className="row align-items-center justify-content-center text-center">
-                  <div className="col-lg-10 align-self-end">
-                    <h1 className="text-white font-weight-bold">
-                      <Trans i18nKey="portfolioPage.headerTitle">
-                        <span className="text-info">Projects</span> I worked on
-                      </Trans>
-                    </h1>
-                  </div>
-                  <div className="col-lg-8 align-self-baseline">
-                    <p className="text-white-75 font-weight-light mb-5">
-                      <Trans i18nKey="portfolioPage.headerDescription">
-                        Here, you can find a list of projects I have been
-                        working on during the last years. I have started to
-                        focus on sustainablity not long ago, this is why you can
-                        find all kind of experiences here.
-                      </Trans>
-                    </p>
-                    <Link
-                      className="btn btn-info btn-xl js-scroll-trigger text-capitalize"
-                      to="/portfolio/#projects"
-                      onClick={Scroller.handleAnchorScroll}
-                    >
-                      <Trans i18nKey="portfolioPage.headerButton">
-                        See projects
-                      </Trans>
-                    </Link>
-                  </div>
+    <main>
+      <Layout title={t('portfolioPage.title')}>
+        <>
+          <div className="portfoliohead" id="head">
+            <div className="background">
+              <StaticImage
+                className="w-100 h-100"
+                src="../images/bg-portfolio.jpg"
+                alt="background"
+              />
+            </div>
+            <div className="container py-5">
+              <div className="row align-items-center justify-content-center text-center">
+                <div className="col-lg-10 align-self-end">
+                  <h1 className="text-white font-weight-bold">
+                    <Trans i18nKey="portfolioPage.headerTitle">
+                      <span className="text-info">Projects</span> I worked on
+                    </Trans>
+                  </h1>
+                </div>
+                <div className="col-lg-8 align-self-baseline">
+                  <p className="text-white-75 font-weight-light mb-5">
+                    <Trans i18nKey="portfolioPage.headerDescription">
+                      Here, you can find a list of projects I have been working
+                      on during the last years. I have started to focus on
+                      sustainablity not long ago, this is why you can find all
+                      kind of experiences here.
+                    </Trans>
+                  </p>
+                  <Link
+                    className="btn btn-info btn-xl js-scroll-trigger text-capitalize"
+                    to="/portfolio/#projects"
+                    onClick={Scroller.handleAnchorScroll}
+                  >
+                    <Trans i18nKey="portfolioPage.headerButton">
+                      See projects
+                    </Trans>
+                  </Link>
                 </div>
               </div>
             </div>
+          </div>
 
-            <section className="bg-primary" id="projects">
-              <div className="container-fluid p-0">
-                <div className="row g-0">
-                  <div className="col-lg-4 col-sm-6">
-                    <a
-                      className="portfolio-box"
-                      href="img/portfolio/fullsize/1.jpg"
-                      onClick={handlePortfolioClick.bind(this, 0)}
-                    >
-                      <GatsbyImage
-                        image={
-                          data.images.edges[0].node.childImageSharp
-                            .gatsbyImageData
-                        }
-                        alt="Project 0"
-                      />
-                      <div className="portfolio-box-caption">
-                        <div className="project-category text-white-50">
-                          Category
-                        </div>
-                        <div className="project-name">Project Name</div>
+          <section className="bg-primary" id="projects">
+            <div className="container-fluid p-0">
+              <div className="row g-0">
+                <div className="col-lg-4 col-sm-6">
+                  <a
+                    className="portfolio-box"
+                    href="img/portfolio/fullsize/1.jpg"
+                    onClick={handlePortfolioClick.bind(this, 0)}
+                  >
+                    <GatsbyImage
+                      image={
+                        data.images.edges[0].node.childImageSharp
+                          .gatsbyImageData
+                      }
+                      alt="Project 0"
+                    />
+                    <div className="portfolio-box-caption">
+                      <div className="project-category text-white-50">
+                        Category
                       </div>
-                    </a>
-                  </div>
-                  <div className="col-lg-4 col-sm-6">
-                    <a
-                      className="portfolio-box"
-                      href="img/portfolio/fullsize/2.jpg"
-                      onClick={handlePortfolioClick.bind(this, 1)}
-                    >
-                      <GatsbyImage
-                        image={
-                          data.images.edges[1].node.childImageSharp
-                            .gatsbyImageData
-                        }
-                        alt="Project 1"
-                      />
-                      <div className="portfolio-box-caption">
-                        <div className="project-category text-white-50">
-                          Category
-                        </div>
-                        <div className="project-name">Project Name</div>
+                      <div className="project-name">Project Name</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-lg-4 col-sm-6">
+                  <a
+                    className="portfolio-box"
+                    href="img/portfolio/fullsize/2.jpg"
+                    onClick={handlePortfolioClick.bind(this, 1)}
+                  >
+                    <GatsbyImage
+                      image={
+                        data.images.edges[1].node.childImageSharp
+                          .gatsbyImageData
+                      }
+                      alt="Project 1"
+                    />
+                    <div className="portfolio-box-caption">
+                      <div className="project-category text-white-50">
+                        Category
                       </div>
-                    </a>
-                  </div>
-                  <div className="col-lg-4 col-sm-6">
-                    <a
-                      className="portfolio-box"
-                      href="img/portfolio/fullsize/3.jpg"
-                      onClick={handlePortfolioClick.bind(this, 2)}
-                    >
-                      <GatsbyImage
-                        image={
-                          data.images.edges[2].node.childImageSharp
-                            .gatsbyImageData
-                        }
-                        alt="Project 2"
-                      />
-                      <div className="portfolio-box-caption">
-                        <div className="project-category text-white-50">
-                          Category
-                        </div>
-                        <div className="project-name">Project Name</div>
+                      <div className="project-name">Project Name</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-lg-4 col-sm-6">
+                  <a
+                    className="portfolio-box"
+                    href="img/portfolio/fullsize/3.jpg"
+                    onClick={handlePortfolioClick.bind(this, 2)}
+                  >
+                    <GatsbyImage
+                      image={
+                        data.images.edges[2].node.childImageSharp
+                          .gatsbyImageData
+                      }
+                      alt="Project 2"
+                    />
+                    <div className="portfolio-box-caption">
+                      <div className="project-category text-white-50">
+                        Category
                       </div>
-                    </a>
-                  </div>
-                  <div className="col-lg-4 col-sm-6">
-                    <a
-                      className="portfolio-box"
-                      href="images/portfolio/fullsize/4.jpg"
-                      onClick={handlePortfolioClick.bind(this, 3)}
-                    >
-                      <GatsbyImage
-                        image={
-                          data.images.edges[3].node.childImageSharp
-                            .gatsbyImageData
-                        }
-                        alt="Project 3"
-                      />
-                      <div className="portfolio-box-caption">
-                        <div className="project-category text-white-50">
-                          Category
-                        </div>
-                        <div className="project-name">Project Name</div>
+                      <div className="project-name">Project Name</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-lg-4 col-sm-6">
+                  <a
+                    className="portfolio-box"
+                    href="images/portfolio/fullsize/4.jpg"
+                    onClick={handlePortfolioClick.bind(this, 3)}
+                  >
+                    <GatsbyImage
+                      image={
+                        data.images.edges[3].node.childImageSharp
+                          .gatsbyImageData
+                      }
+                      alt="Project 3"
+                    />
+                    <div className="portfolio-box-caption">
+                      <div className="project-category text-white-50">
+                        Category
                       </div>
-                    </a>
-                  </div>
-                  <div className="col-lg-4 col-sm-6">
-                    <a
-                      className="portfolio-box"
-                      href="img/portfolio/fullsize/5.jpg"
-                      onClick={handlePortfolioClick.bind(this, 4)}
-                    >
-                      <GatsbyImage
-                        image={
-                          data.images.edges[4].node.childImageSharp
-                            .gatsbyImageData
-                        }
-                        alt="Project 4"
-                      />
-                      <div className="portfolio-box-caption">
-                        <div className="project-category text-white-50">
-                          Category
-                        </div>
-                        <div className="project-name">Project Name</div>
+                      <div className="project-name">Project Name</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-lg-4 col-sm-6">
+                  <a
+                    className="portfolio-box"
+                    href="img/portfolio/fullsize/5.jpg"
+                    onClick={handlePortfolioClick.bind(this, 4)}
+                  >
+                    <GatsbyImage
+                      image={
+                        data.images.edges[4].node.childImageSharp
+                          .gatsbyImageData
+                      }
+                      alt="Project 4"
+                    />
+                    <div className="portfolio-box-caption">
+                      <div className="project-category text-white-50">
+                        Category
                       </div>
-                    </a>
-                  </div>
-                  <div className="col-lg-4 col-sm-6">
-                    <a
-                      className="portfolio-box"
-                      href="img/portfolio/fullsize/6.jpg"
-                      onClick={handlePortfolioClick.bind(this, 5)}
-                    >
-                      <GatsbyImage
-                        image={
-                          data.images.edges[5].node.childImageSharp
-                            .gatsbyImageData
-                        }
-                        alt="Project 5"
-                      />
-                      <div className="portfolio-box-caption p-3">
-                        <div className="project-category text-white-50">
-                          Category
-                        </div>
-                        <div className="project-name">Project Name</div>
+                      <div className="project-name">Project Name</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-lg-4 col-sm-6">
+                  <a
+                    className="portfolio-box"
+                    href="img/portfolio/fullsize/6.jpg"
+                    onClick={handlePortfolioClick.bind(this, 5)}
+                  >
+                    <GatsbyImage
+                      image={
+                        data.images.edges[5].node.childImageSharp
+                          .gatsbyImageData
+                      }
+                      alt="Project 5"
+                    />
+                    <div className="portfolio-box-caption p-3">
+                      <div className="project-category text-white-50">
+                        Category
                       </div>
-                    </a>
-                  </div>
+                      <div className="project-name">Project Name</div>
+                    </div>
+                  </a>
                 </div>
               </div>
-            </section>
-            <PortfolioModal show={modalShow} onHide={() => setModal(false, 0)}>
-              <PortfolioCarousel
-                images={data.images.edges}
-                current={modalCurrent}
-              />
-            </PortfolioModal>
-          </>
-        </Layout>
-      </main>
-    </SSRProvider>
+            </div>
+          </section>
+          <PortfolioModal show={modalShow} onHide={() => setModal(false, 0)}>
+            <PortfolioCarousel
+              images={data.images.edges}
+              current={modalCurrent}
+            />
+          </PortfolioModal>
+        </>
+      </Layout>
+    </main>
   )
 }
 

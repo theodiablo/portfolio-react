@@ -42,7 +42,7 @@ const Header = () => {
       >
         <div className="container d-flex justify-content-between">
           <Link className="navbar-brand js-scroll-trigger" to="/">
-            Théo Camboulive <span className="text-primary">Solutions</span>
+            Théo Camboulive <span className="text-secondary">Solutions</span>
           </Link>
           <Navbar.Toggle
             onClick={() => setExpanded(expanded ? false : 'expanded')}
