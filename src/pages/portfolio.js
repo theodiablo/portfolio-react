@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Layout from '../components/layout'
 import Scroller from '../components/scroller'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { Link, Trans, useTranslation } from 'gatsby-plugin-react-i18next'
 import { StaticImage } from 'gatsby-plugin-image'
 
@@ -10,7 +10,7 @@ import PortfolioModal from '../components/portfolio/modal'
 import PortfolioCarousel from '../components/portfolio/carousel'
 import { SSRProvider } from 'react-bootstrap'
 
-const PortfolioPage = (props) => {
+const PortfolioPage = ({ data }) => {
   const { t } = useTranslation()
   const [modalShow, setModalShow] = useState(false)
   const [modalCurrent, setModalCurrent] = useState(0)
@@ -81,10 +81,12 @@ const PortfolioPage = (props) => {
                       href="img/portfolio/fullsize/1.jpg"
                       onClick={handlePortfolioClick.bind(this, 0)}
                     >
-                      <Img
-                        fluid={
-                          props.data.images.edges[0].node.childImageSharp.fluid
+                      <GatsbyImage
+                        image={
+                          data.images.edges[0].node.childImageSharp
+                            .gatsbyImageData
                         }
+                        alt="Project 0"
                       />
                       <div className="portfolio-box-caption">
                         <div className="project-category text-white-50">
@@ -100,10 +102,12 @@ const PortfolioPage = (props) => {
                       href="img/portfolio/fullsize/2.jpg"
                       onClick={handlePortfolioClick.bind(this, 1)}
                     >
-                      <Img
-                        fluid={
-                          props.data.images.edges[1].node.childImageSharp.fluid
+                      <GatsbyImage
+                        image={
+                          data.images.edges[1].node.childImageSharp
+                            .gatsbyImageData
                         }
+                        alt="Project 1"
                       />
                       <div className="portfolio-box-caption">
                         <div className="project-category text-white-50">
@@ -119,10 +123,12 @@ const PortfolioPage = (props) => {
                       href="img/portfolio/fullsize/3.jpg"
                       onClick={handlePortfolioClick.bind(this, 2)}
                     >
-                      <Img
-                        fluid={
-                          props.data.images.edges[2].node.childImageSharp.fluid
+                      <GatsbyImage
+                        image={
+                          data.images.edges[2].node.childImageSharp
+                            .gatsbyImageData
                         }
+                        alt="Project 2"
                       />
                       <div className="portfolio-box-caption">
                         <div className="project-category text-white-50">
@@ -138,10 +144,12 @@ const PortfolioPage = (props) => {
                       href="images/portfolio/fullsize/4.jpg"
                       onClick={handlePortfolioClick.bind(this, 3)}
                     >
-                      <Img
-                        fluid={
-                          props.data.images.edges[3].node.childImageSharp.fluid
+                      <GatsbyImage
+                        image={
+                          data.images.edges[3].node.childImageSharp
+                            .gatsbyImageData
                         }
+                        alt="Project 3"
                       />
                       <div className="portfolio-box-caption">
                         <div className="project-category text-white-50">
@@ -157,10 +165,12 @@ const PortfolioPage = (props) => {
                       href="img/portfolio/fullsize/5.jpg"
                       onClick={handlePortfolioClick.bind(this, 4)}
                     >
-                      <Img
-                        fluid={
-                          props.data.images.edges[4].node.childImageSharp.fluid
+                      <GatsbyImage
+                        image={
+                          data.images.edges[4].node.childImageSharp
+                            .gatsbyImageData
                         }
+                        alt="Project 4"
                       />
                       <div className="portfolio-box-caption">
                         <div className="project-category text-white-50">
@@ -176,10 +186,12 @@ const PortfolioPage = (props) => {
                       href="img/portfolio/fullsize/6.jpg"
                       onClick={handlePortfolioClick.bind(this, 5)}
                     >
-                      <Img
-                        fluid={
-                          props.data.images.edges[5].node.childImageSharp.fluid
+                      <GatsbyImage
+                        image={
+                          data.images.edges[5].node.childImageSharp
+                            .gatsbyImageData
                         }
+                        alt="Project 5"
                       />
                       <div className="portfolio-box-caption p-3">
                         <div className="project-category text-white-50">
@@ -194,7 +206,7 @@ const PortfolioPage = (props) => {
             </section>
             <PortfolioModal show={modalShow} onHide={() => setModal(false, 0)}>
               <PortfolioCarousel
-                images={props.data.images.edges}
+                images={data.images.edges}
                 current={modalCurrent}
               />
             </PortfolioModal>
@@ -225,9 +237,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }

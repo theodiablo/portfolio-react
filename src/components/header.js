@@ -64,20 +64,20 @@ const Header = () => {
               >
                 <li className="nav-item">
                   <Link
-                    to="/#about"
-                    className="js-scroll-trigger nav-link"
-                    onClick={handleClickOnMenuItem}
-                  >
-                    About
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
                     className="js-scroll-trigger nav-link"
                     to="/#services"
                     onClick={handleClickOnMenuItem}
                   >
                     Services
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    to="/#about"
+                    className="js-scroll-trigger nav-link"
+                    onClick={handleClickOnMenuItem}
+                  >
+                    About
                   </Link>
                 </li>
                 <li className="nav-item">

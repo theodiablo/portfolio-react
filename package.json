@@ -33,7 +33,6 @@
     "bootstrap": "^5.1.2",
     "country-flag-icons": "^1.4.10",
     "gatsby": "^3.13.1",
-    "gatsby-image": "^3.11.0",
     "gatsby-plugin-google-gtag": "^3.14.0",
     "gatsby-plugin-image": "^1.14.0",
     "gatsby-plugin-manifest": "^3.14.0",

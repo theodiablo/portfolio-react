@@ -213,7 +213,7 @@ const IndexPage = () => {
                     href="#about"
                     onClick={Scroller.handleAnchorScroll}
                   >
-                    <Trans>Know me better</Trans>
+                    <Trans>About me</Trans>
                   </a>
                 </div>
               </div>
@@ -281,7 +281,7 @@ const IndexPage = () => {
                       href="#services"
                       onClick={Scroller.handleAnchorScroll}
                     >
-                      <Trans>Know me better</Trans>
+                      <Trans>More about me</Trans>
                     </a>
                   </div>
                 </div>
