@@ -14,6 +14,7 @@ import {
   faShoppingCart,
   faSitemap,
 } from '@fortawesome/free-solid-svg-icons'
+import { Card, Col, Row } from 'react-bootstrap'
 
 const IndexPage = () => {
   const { t } = useTranslation()
