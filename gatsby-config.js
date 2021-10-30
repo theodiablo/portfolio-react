@@ -31,6 +31,8 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-no-sourcemaps',
+    'gatsby-plugin-minify',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
