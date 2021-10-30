@@ -10,17 +10,6 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
     {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: [
-            'Josefin+Sans:400,300,300italic,400italic,700,700italic',
-            'Merriweather+Sans:400,700',
-          ],
-        },
-      },
-    },
-    {
       resolve: 'gatsby-plugin-google-gtag',
       options: {
         trackingIds: ['G-T8VW35DESW'],
@@ -69,7 +58,7 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
-        languages: [`en`, `es`],
+        languages: [`en`, `es`, `fr`],
         defaultLanguage: `en`,
         // if you are using Helmet, you must include siteUrl, and make sure you add http:https
         siteUrl: `https://theo.camboulive.solutions/`,
