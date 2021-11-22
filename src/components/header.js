@@ -47,7 +47,10 @@ const Header = (props) => {
             Théo Camboulive{' '}
             <span
               className={
-                props.logoVariant ? 'text-' + props.logoVariant : 'text-primary'
+                'colored ' +
+                (props.logoVariant
+                  ? 'text-' + props.logoVariant
+                  : 'text-primary')
               }
             >
               Solutions

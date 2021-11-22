@@ -103,7 +103,11 @@ $navbarBaseColor: $white;
       color: $gray-900;
       &:hover {
         color: $primary;
+        .colored{
+          color: $primary !important;
+        }
       }
+      
     }
     .navbar-nav {
       .nav-item {

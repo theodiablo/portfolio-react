@@ -25,13 +25,13 @@ const IndexPage = () => {
 
   return (
     <main>
-      <Layout title={t('homePage.title')} logoVariant="primary" id="homepage">
+      <Layout title={t('homePage.title')} logoVariant="dark" id="homepage">
         <>
           <div className="masthead" id="head">
             <div className="background">
               <StaticImage
                 className="w-100 h-100"
-                src="../images/bg-masthead.jpg"
+                src="../images/bg-home.jpg"
                 alt="background"
                 formats={['auto', 'webp', 'avif']}
               />
