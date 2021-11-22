@@ -1,3 +1,28 @@
 #homepage{
-    
+    #services{
+        .service{
+            .icon{
+                @extend .rounded-circle, .bg-primary, .border, .border-primary;
+                height: 2em;
+                width: 2em;
+                padding: 0.35em;
+                vertical-align: middle;
+                transition: background-color .3s ease;
+                transition: color .3s ease;
+                color: white;
+            }
+            .service-title{
+                vertical-align: middle;
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+
+            &:hover{
+                .icon{
+                    @extend .bg-white;
+                    color: $primary;
+                }
+            }
+        }
+    }
 }

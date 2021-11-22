@@ -1,0 +1,12 @@
+
+#cv{
+    background: linear-gradient(to bottom, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
+    margin-top: $navbar-height;
+
+
+    .company-logo{
+        @extend .rounded-circle, .shadow-sm;
+        height: 4em;
+        width: 4em;
+    }
+}

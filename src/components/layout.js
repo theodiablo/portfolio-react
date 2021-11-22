@@ -52,7 +52,7 @@ const Layout = (props) => {
       <div className={className} ref={siteContainer} id="page-top">
         <Header logoVariant={props.logoVariant} />
         <ScrollTop />
-        <main>{props.children}</main>
+        <main id={props.id}>{props.children}</main>
         <Footer />
       </div>
     </>

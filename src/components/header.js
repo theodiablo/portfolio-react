@@ -10,7 +10,6 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import flagGb from '../images/flag-gb.svg'
 import flagEs from '../images/flag-es.svg'
 import flagFr from '../images/flag-fr.svg'
-import { propTypes } from 'react-bootstrap/esm/Image'
 
 i18next.use(LanguageDetector)
 

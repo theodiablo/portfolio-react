@@ -8,7 +8,8 @@
   "portfolioPage.headerTitle": "<0>Projects</0> I worked on",
   "portfolioPage.headerDescription": "Here, you can find a list of projects I have been working on during the last years. I have started to focus on sustainablity not long ago, this is why you can find all kind of experiences here.",
   "portfolioPage.headerButton": "See projects",
-  "Projects": "Projects",
+
+  "cvPage.title": "CV",
 
   "about.description1": "After years working as a Full Stack developer for several companies <2>(Sopra Steria, Criteo, King—AKA Candy Crush...)</2>, I decided to leave this business world and start working exclusively for sustainable businesses.",
   "about.description2": "After a 1 year trip around Asia with my life partner, we co-founded <2>Luffa Shop</2>, an online store focused on reducing trash for Spanish households. In 3 years we planted 3\u00a0500+ trees and avoided 15\u00a0000+ kg of plastic waste!",
@@ -50,5 +51,6 @@
   "About me": "About me",
   "View my CV": "View my CV",
   "Core values": "Core values",
-  "Portfolio": "Portfolio"
+  "Portfolio": "Portfolio",
+  "Projects": "Projects"
 }

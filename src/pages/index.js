@@ -82,12 +82,17 @@ const IndexPage = () => {
                   ]
                   return (
                     <Col key={idx}>
-                      <Card className="shadow mx-1 rounded-3">
-                        <Card.Header className="h4">
-                          <FontAwesomeIcon icon={icons[idx]} className="me-1" />
-                          <Trans i18nKey={'services.title' + (idx + 1)}>
-                            Back-End
-                          </Trans>
+                      <Card className="shadow mx-1 rounded-3 service">
+                        <Card.Header className="h4 d-flex">
+                          <FontAwesomeIcon
+                            icon={icons[idx]}
+                            className="me-1 icon"
+                          />
+                          <p className="service-title">
+                            <Trans i18nKey={'services.title' + (idx + 1)}>
+                              Back-End
+                            </Trans>
+                          </p>
                         </Card.Header>
                         <Card.Body>
                           <Card.Text>
@@ -190,13 +195,14 @@ const IndexPage = () => {
                       </p>
                     </div>
                   </div>
-                  <a
-                    className="btn btn-light btn-xl js-scroll-trigger"
-                    href="#services"
-                    onClick={Scroller.handleAnchorScroll}
-                  >
-                    <Trans>View my CV</Trans>
-                  </a>
+                  {process.env.NODE_ENV === 'development' && (
+                    <Link
+                      to="/cv/"
+                      className="btn btn-light btn-xl js-scroll-trigger"
+                    >
+                      <Trans>View my CV</Trans>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
