@@ -10,7 +10,10 @@
   "portfolioPage.headerButton": "See projects",
   "Projects": "Projects",
 
-  "values": "Core Values",
+  "about.description1": "After years working as a Full Stack developer for several companies <2>(Sopra Steria, Criteo, King—AKA Candy Crush...)</2>, I decided to leave this business world and start working exclusively for sustainable businesses.",
+  "about.description2": "After a 1 year trip around Asia with my life partner, we co-founded <2>Luffa Shop</2>, an online store focused on reducing trash for Spanish households. In 3 years we planted 3\u00a0500+ trees and avoided 15\u00a0000+ kg of plastic waste!",
+  "about.description3": "During all this time, I have acquired a wide range of technical and business knowledge, which enables me to work through many different business situation.",
+
   "values.title1": "Efficiency & Reliability",
   "values.desc1": "I design solutions to optimize speed, computation and storage to reduce impact on the planet and cost for the customers.",
   "values.title2": "Communication & Honesty",
@@ -43,10 +46,9 @@
   "language.fr": "Français",
 
   "Théo Camboulive - Full Stack Freelancer": "Théo Camboulive - Full Stack Freelancer",
-  "about.description1": "After years working as a Full Stack developer for several companies <2>(Sopra Steria, Criteo, King—AKA Candy Crush...)</2>, I decided to leave this business world and start working exclusively for sustainable businesses.",
-  "about.description2": "After a 1 year trip around Asia with my life partner, we co-founded <2>Luffa Shop</2>, an online store focused on reducing trash for Spanish households. In 3 years we planted 3\u00a0500+ trees and avoided 15\u00a0000+ kg of plastic waste!",
-  "about.description3": "During all this time, I have acquired a wide range of technical and business knowledge, which enables me to work through many different business situation.",
+
   "About me": "About me",
-  "More about me": "More about me",
-  "Core values": "Core values"
+  "View my CV": "View my CV",
+  "Core values": "Core values",
+  "Portfolio": "Portfolio"
 }

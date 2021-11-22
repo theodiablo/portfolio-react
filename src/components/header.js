@@ -96,7 +96,7 @@ const Header = (props) => {
                     to="/portfolio/"
                     onClick={() => setExpanded(false)}
                   >
-                    Portfolio
+                    <Trans>Portfolio</Trans>
                   </Link>
                 </li>
                 <li className="nav-item">

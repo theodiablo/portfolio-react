@@ -24,7 +24,7 @@ const IndexPage = () => {
 
   return (
     <main>
-      <Layout title={t('homePage.title')} logoVariant="primary">
+      <Layout title={t('homePage.title')} logoVariant="primary" id="homepage">
         <>
           <div className="masthead" id="head">
             <div className="background">
@@ -100,8 +100,8 @@ const IndexPage = () => {
                             </Trans>
                           </Card.Text>
                         </Card.Body>
-                        <Card.Footer>
-                          <p className="h6 text-center">
+                        <Card.Footer className="bg-white text-center">
+                          <p className="h6">
                             <Trans i18nKey={'services.skills'}>Skills</Trans>
                           </p>
                           {t('services.skills' + (idx + 1))
@@ -111,7 +111,7 @@ const IndexPage = () => {
                                 <>
                                   <Badge
                                     key={`skill${idx}-${skillIndex}`}
-                                    bg="secondary"
+                                    bg="primary"
                                   >
                                     {skill.trim()}
                                   </Badge>{' '}
@@ -195,7 +195,7 @@ const IndexPage = () => {
                     href="#services"
                     onClick={Scroller.handleAnchorScroll}
                   >
-                    <Trans>More about me</Trans>
+                    <Trans>View my CV</Trans>
                   </a>
                 </div>
               </div>
@@ -205,7 +205,7 @@ const IndexPage = () => {
           <section className="page-section" id="values">
             <div className="container">
               <h2 className="text-center mt-0">
-                <Trans i18nKey="values">Core values</Trans>
+                <Trans>Core values</Trans>
               </h2>
               <hr className="divider my-4" />
               <div className="row">

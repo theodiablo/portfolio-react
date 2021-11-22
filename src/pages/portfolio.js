@@ -28,7 +28,11 @@ const PortfolioPage = ({ data }) => {
 
   return (
     <main>
-      <Layout title={t('portfolioPage.title')} logoVariant="info">
+      <Layout
+        title={t('portfolioPage.title')}
+        logoVariant="info"
+        id="portfolio"
+      >
         <>
           <div className="portfoliohead" id="head" style={{ display: 'grid' }}>
             <StaticImage
