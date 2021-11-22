@@ -6,15 +6,16 @@ import { Link, Trans, useTranslation } from 'gatsby-plugin-react-i18next'
 import { StaticImage } from 'gatsby-plugin-image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
+  faBullhorn,
   faChartLine,
   faCogs,
-  faGlobe,
-  faHeart,
+  faHandsHelping,
   faLaptopCode,
+  faLeaf,
   faShoppingCart,
   faSitemap,
 } from '@fortawesome/free-solid-svg-icons'
-import { Card, Col, Row } from 'react-bootstrap'
+import { Badge, Card, Col, Row } from 'react-bootstrap'
 
 const IndexPage = () => {
   const { t } = useTranslation()
@@ -35,10 +36,10 @@ const IndexPage = () => {
             </div>
             <div className="container h-100">
               <div className="row h-100 align-items-center justify-content-center text-center">
-                <div className="col-lg-10 align-self-end">
+                <div className="col-lg-10 g-0 align-self-end">
                   <h1 className="text-white font-weight-bold">
                     <Trans i18nKey="homePage.headerTitle">
-                      <span className="text-primary">Green</span> IT Solutions
+                      <span className="text-primary">Green</span> Tech Solutions
                     </Trans>
                   </h1>
                 </div>
@@ -70,98 +71,6 @@ const IndexPage = () => {
                 <Trans>Services</Trans>
               </h2>
               <hr className="divider my-4" />
-              <Row style={{ display: 'none' }}>
-                <Col>
-                  <Card className="shadow p-3 mx-1 rounded-3">
-                    <Card.Body>
-                      <Card.Title>
-                        <Trans i18nKey="services1.title">Back-End</Trans>
-                      </Card.Title>
-                      <Card.Text>
-                        <Trans i18nKey="services.body">
-                          Java, Php, GoLang, Database Administration (SQL,
-                          MongoDb), RestApis... This is a wider card with
-                          supporting text below as a natural lead-in to
-                          additional content. This content is a little bit
-                          longer.
-                        </Trans>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <Col>
-                  <Card className="shadow p-3 mx-1 rounded-3">
-                    <Card.Body>
-                      <Card.Title>
-                        <Trans i18nKey="services2.title">Front-End</Trans>
-                      </Card.Title>
-                      <Card.Text>
-                        <Trans i18nKey="services2.body">
-                          React, Vue, Web standards... This is a wider card with
-                          supporting text below as a natural lead-in to
-                          additional content. This content is a little bit
-                          longer.
-                        </Trans>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <Col>
-                  <Card className="shadow p-3 mx-1 rounded-3">
-                    <Card.Body>
-                      <Card.Title>
-                        <Trans i18nKey="services3.title">
-                          Architecture &amp; Hosting
-                        </Trans>
-                      </Card.Title>
-                      <Card.Text>
-                        <Trans i18nKey="services3.body">
-                          Microservices, Monolyth... This card has supporting
-                          text below as a natural lead-in to additional content.
-                        </Trans>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <Col>
-                  <Card className="shadow p-3 mx-1 rounded-3">
-                    <Card.Body>
-                      <Card.Title>
-                        <Trans i18nKey="services4.title">
-                          Analytics &amp; SEO
-                        </Trans>
-                      </Card.Title>
-                      <Card.Text>
-                        <Trans i18nKey="services4.body">
-                          This is a wider card with supporting text below as a
-                          natural lead-in to additional content. This card has
-                          even longer content than the first to show that equal
-                          height action.
-                        </Trans>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <Col>
-                  <Card className="shadow p-3 mx-1 rounded-3">
-                    <Card.Body>
-                      <Card.Title>
-                        <Trans i18nKey="services5.title">
-                          Ecommerce optimization
-                        </Trans>
-                      </Card.Title>
-                      <Card.Text>
-                        <Trans i18nKey="services5.body">
-                          Woocommerce, Prestashop... This is a wider card with
-                          supporting text below as a natural lead-in to
-                          additional content. This card has even longer content
-                          than the first to show that equal height action.
-                        </Trans>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              </Row>
               <Row xl="5" lg="4" md="3" sm="2" xs="1" className="gy-2 gx-1">
                 {Array.from({ length: 5 }).map((_, idx) => {
                   const icons = [
@@ -174,18 +83,15 @@ const IndexPage = () => {
                   return (
                     <Col key={idx}>
                       <Card className="shadow mx-1 rounded-3">
+                        <Card.Header className="h4">
+                          <FontAwesomeIcon icon={icons[idx]} className="me-1" />
+                          <Trans i18nKey={'services.title' + (idx + 1)}>
+                            Back-End
+                          </Trans>
+                        </Card.Header>
                         <Card.Body>
-                          <Card.Title>
-                            <FontAwesomeIcon
-                              icon={icons[idx]}
-                              className="me-1"
-                            />
-                            <Trans i18nKey={'services' + (idx + 1) + '.title'}>
-                              Back-End
-                            </Trans>
-                          </Card.Title>
                           <Card.Text>
-                            <Trans i18nKey={'services' + (idx + 1) + '.body'}>
+                            <Trans i18nKey={'services.body' + (idx + 1)}>
                               Java, Php, GoLang, Database Administration (SQL,
                               MongoDb), RestApis... This is a wider card with
                               supporting text below as a natural lead-in to
@@ -194,6 +100,25 @@ const IndexPage = () => {
                             </Trans>
                           </Card.Text>
                         </Card.Body>
+                        <Card.Footer>
+                          <p className="h6 text-center">
+                            <Trans i18nKey={'services.skills'}>Skills</Trans>
+                          </p>
+                          {t('services.skills' + (idx + 1))
+                            .split(',')
+                            .map((skill, skillIndex) => {
+                              return (
+                                <>
+                                  <Badge
+                                    key={`skill${idx}-${skillIndex}`}
+                                    bg="secondary"
+                                  >
+                                    {skill.trim()}
+                                  </Badge>{' '}
+                                </>
+                              )
+                            })}
+                        </Card.Footer>
                       </Card>
                     </Col>
                   )
@@ -280,59 +205,92 @@ const IndexPage = () => {
           <section className="page-section" id="values">
             <div className="container">
               <h2 className="text-center mt-0">
-                <Trans>Core values</Trans>
+                <Trans i18nKey="values">Core values</Trans>
               </h2>
               <hr className="divider my-4" />
               <div className="row">
-                <div className="col-lg-3 col-md-6 text-center">
+                <div className="col-lg-3 col-md-6 text-center value-1">
                   <div className="mt-5">
                     <FontAwesomeIcon
                       icon={faLaptopCode}
                       className="text-primary mb-4"
                       size="4x"
                     />
-                    <h3 className="h4 mb-2">Sturdy Themes</h3>
+                    <h3 className="h4 mb-2">
+                      <Trans i18nKey="values.title1">
+                        Efficiency &amp; Skills
+                      </Trans>
+                    </h3>
                     <p className="text-muted mb-0">
-                      Our themes are updated regularly to keep them bug free!
+                      <Trans i18nKey="values.desc1">
+                        I design solutions to optimize speed, computation and
+                        storage to reduce impact on the planet and cost for the
+                        customers.
+                      </Trans>
                     </p>
                   </div>
                 </div>
-                <div className="col-lg-3 col-md-6 text-center">
+                <div className="col-lg-3 col-md-6 text-center value-2">
                   <div className="mt-5">
                     <FontAwesomeIcon
-                      icon={faGlobe}
+                      icon={faBullhorn}
                       className="text-primary mb-4"
                       size="4x"
                     />
-                    <h3 className="h4 mb-2">Up to Date</h3>
+                    <h3 className="h4 mb-2">
+                      <Trans i18nKey="values.title2">
+                        Communication &amp; Honesty
+                      </Trans>
+                    </h3>
                     <p className="text-muted mb-0">
-                      All dependencies are kept current to keep things fresh.
+                      <Trans i18nKey="values.desc2">
+                        I say inconvenient truths early rather than keeping them
+                        until it is too late. I believe that communication is
+                        the most important skill to carry out a project
+                        successfully.
+                      </Trans>
                     </p>
                   </div>
                 </div>
-                <div className="col-lg-3 col-md-6 text-center">
+                <div className="col-lg-3 col-md-6 text-center value-3">
                   <div className="mt-5">
                     <FontAwesomeIcon
-                      icon={faHeart}
+                      icon={faHandsHelping}
                       className="text-primary mb-4"
                       size="4x"
                     />
-                    <h3 className="h4 mb-2">Ready to Publish</h3>
+                    <h3 className="h4 mb-2">
+                      <Trans i18nKey="values.title3">Professionalism</Trans>
+                    </h3>
                     <p className="text-muted mb-0">
-                      You can use this design as is, or you can make changes!
+                      <Trans i18nKey="values.desc3">
+                        I treat all my customers as equals. All the work I
+                        realize have the same importance and quality standards.
+                        I like to see myself as part of development team of the
+                        company I work for.
+                      </Trans>
                     </p>
                   </div>
                 </div>
-                <div className="col-lg-3 col-md-6 text-center">
+                <div className="col-lg-3 col-md-6 text-center value-4">
                   <div className="mt-5">
                     <FontAwesomeIcon
-                      icon={faCogs}
+                      icon={faLeaf}
                       className="text-primary mb-4"
                       size="4x"
                     />
-                    <h3 className="h4 mb-2">Made with Love</h3>
+                    <h3 className="h4 mb-2">
+                      <Trans i18nKey="values.title4">Ethics</Trans>
+                    </h3>
                     <p className="text-muted mb-0">
-                      Is it really open source if it&apos;s not made with love?
+                      <Trans
+                        i18nKey="values.desc4"
+                        components={{ italic: <em /> }}
+                      >
+                        My goal is to help the world to be a better place by
+                        helping sustainable companies. Keeping the
+                        <italic>status quo</italic> is not an option.
+                      </Trans>
                     </p>
                   </div>
                 </div>
