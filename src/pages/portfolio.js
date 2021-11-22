@@ -28,18 +28,37 @@ const PortfolioPage = ({ data }) => {
 
   return (
     <main>
-      <Layout title={t('portfolioPage.title')}>
+      <Layout title={t('portfolioPage.title')} logoVariant="info">
         <>
-          <div className="portfoliohead" id="head">
-            <div className="background">
-              <StaticImage
-                className="w-100 h-100"
-                src="../images/bg-portfolio.jpg"
-                alt="background"
-              />
-            </div>
-            <div className="container py-5">
-              <div className="row align-items-center justify-content-center text-center">
+          <div className="portfoliohead" id="head" style={{ display: 'grid' }}>
+            <StaticImage
+              className="backgroundImage"
+              style={{
+                gridArea: '1/1',
+                // You can set a maximum height for the image, if you wish.
+                maxHeight: 500,
+                zIndex: -1,
+              }}
+              layout="fullWidth"
+              // You can optionally force an aspect ratio for the generated image
+              aspectRatio={3 / 1}
+              // This is a presentational image, so the alt should be an empty string
+              alt=""
+              src={'../images/bg-portfolio.jpg'}
+              formats={['auto', 'webp', 'avif']}
+            />
+            <div
+              className="content container"
+              style={{
+                // By using the same grid area for both, they are stacked on top of each other
+                gridArea: '1/1',
+                position: 'relative',
+                // This centers the other elements inside the hero component
+                placeItems: 'center',
+                display: 'grid',
+              }}
+            >
+              <div className="row align-items-center justify-content-center text-center  py-5">
                 <div className="col-lg-10 align-self-end">
                   <h1 className="text-white font-weight-bold">
                     <Trans i18nKey="portfolioPage.headerTitle">
@@ -70,7 +89,7 @@ const PortfolioPage = ({ data }) => {
             </div>
           </div>
 
-          <section className="bg-primary" id="projects">
+          <section className="bg-info" id="projects">
             <div className="container-fluid p-0">
               <div className="row g-0">
                 <div className="col-lg-4 col-sm-6">
@@ -234,7 +253,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(layout: CONSTRAINED)
           }
         }
       }

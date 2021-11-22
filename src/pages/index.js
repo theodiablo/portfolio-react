@@ -23,7 +23,7 @@ const IndexPage = () => {
 
   return (
     <main>
-      <Layout title={t('homePage.title')}>
+      <Layout title={t('homePage.title')} logoVariant="primary">
         <>
           <div className="masthead" id="head">
             <div className="background">

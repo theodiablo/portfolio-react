@@ -50,7 +50,7 @@ const Layout = (props) => {
     <>
       <Seo title={props.title} />
       <div className={className} ref={siteContainer} id="page-top">
-        <Header />
+        <Header logoVariant={props.logoVariant} />
         <ScrollTop />
         <main>{props.children}</main>
         <Footer />

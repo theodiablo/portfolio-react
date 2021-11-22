@@ -10,6 +10,7 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import flagGb from '../images/flag-gb.svg'
 import flagEs from '../images/flag-es.svg'
 import flagFr from '../images/flag-fr.svg'
+import { propTypes } from 'react-bootstrap/esm/Image'
 
 i18next.use(LanguageDetector)
 
@@ -19,7 +20,7 @@ const languageFlagCountry = {
   fr: flagFr,
 }
 
-const Header = () => {
+const Header = (props) => {
   const {
     languages: avaliableLanguages,
     language: currentLanguage,
@@ -32,6 +33,8 @@ const Header = () => {
     Scroller.handleAnchorScroll(target)
   }
 
+  console.log(props.logoVariant)
+
   return (
     <>
       <Navbar
@@ -42,7 +45,14 @@ const Header = () => {
       >
         <div className="container d-flex justify-content-between">
           <Link className="navbar-brand js-scroll-trigger" to="/">
-            Théo Camboulive <span className="text-secondary">Solutions</span>
+            Théo Camboulive{' '}
+            <span
+              className={
+                props.logoVariant ? 'text-' + props.logoVariant : 'text-primary'
+              }
+            >
+              Solutions
+            </span>
           </Link>
           <Navbar.Toggle
             onClick={() => setExpanded(expanded ? false : 'expanded')}
