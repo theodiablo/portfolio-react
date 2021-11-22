@@ -176,7 +176,7 @@ const IndexPage = () => {
                             <StaticImage
                               className="company-logo"
                               layout="constrained"
-                              aspectRatio={1 / 1}
+                              aspectratio={1 / 1}
                               alt="Luffa Shop"
                               src={'../images/cv/company-luffa.png'}
                               formats={['auto', 'webp', 'avif']}
@@ -230,7 +230,7 @@ const IndexPage = () => {
                             <StaticImage
                               className="company-logo"
                               layout="constrained"
-                              aspectRatio={1 / 1}
+                              aspectratio={1 / 1}
                               alt="King"
                               src={'../images/cv/company-king.svg'}
                               formats={['auto', 'webp', 'avif']}
@@ -292,7 +292,7 @@ const IndexPage = () => {
                           <StaticImage
                             className="company-logo"
                             layout="constrained"
-                            aspectRatio={1 / 1}
+                            aspectratio={1 / 1}
                             alt="Freelance"
                             src={'../images/cv/company-freelance.png'}
                             formats={['auto', 'webp', 'avif']}
@@ -339,7 +339,7 @@ const IndexPage = () => {
                             <StaticImage
                               className="company-logo"
                               layout="constrained"
-                              aspectRatio={1 / 1}
+                              aspectratio={1 / 1}
                               alt="Freelance"
                               src={'../images/cv/company-icontainers.png'}
                               formats={['auto', 'webp', 'avif']}
@@ -395,7 +395,7 @@ const IndexPage = () => {
                             <StaticImage
                               className="company-logo"
                               layout="constrained"
-                              aspectRatio={1 / 1}
+                              aspectratio={1 / 1}
                               alt="Freelance"
                               src={'../images/cv/company-criteo.png'}
                               formats={['auto', 'webp', 'avif']}
@@ -444,7 +444,7 @@ const IndexPage = () => {
                             <StaticImage
                               className="company-logo"
                               layout="constrained"
-                              aspectRatio={1 / 1}
+                              aspectratio={1 / 1}
                               alt="Freelance"
                               src={'../images/cv/company-sopra.png'}
                               formats={['auto', 'webp', 'avif']}

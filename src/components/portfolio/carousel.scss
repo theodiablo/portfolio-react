@@ -13,23 +13,19 @@
 			height: 24px;
 			position: relative;
 		}
+	}
+	
 
 		.bottom-bar {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
 			cursor: auto;
+			color: #CCC;
+			text-align: right;
 
-			.counter {
-				position: absolute;
-				top: 4px;
-				right: 0;
-				color: #CCC;
-				font-size: 12px;
-				line-height: 18px;
+			.name {
+				white-space: nowrap;
+			}
+			.category {
 				white-space: nowrap;
 			}
 		}
-	}
 }

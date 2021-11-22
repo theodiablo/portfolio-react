@@ -1,26 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Carousel } from 'react-bootstrap'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { Badge, Carousel } from 'react-bootstrap'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import './carousel.scss'
 
-const PortfolioCarousel = ({ images, current }) => {
-  const carouselItems = images.map((image, index) => (
+const PortfolioCarousel = ({ projects, current }) => {
+  const carouselItems = projects.map((project, index) => (
     <Carousel.Item key={index}>
-      <figure>
-        <GatsbyImage
-          image={image.node.childImageSharp.gatsbyImageData}
-          alt={`Project ${index}`}
-        />
-        <figcaption>
-          <div className="bottom-bar">
-            <div className="counter">
-              {index + 1} of {images.length}
-            </div>
-          </div>
-        </figcaption>
-      </figure>
+      <GatsbyImage image={getImage(project.image)} alt={`Project ${index}`} />
+      <div className="bottom-bar">
+        <div className="name">{project.name}</div>
+        <div className="category w-100 text-right">
+          <Badge>{project.category}</Badge>
+        </div>
+      </div>
     </Carousel.Item>
   ))
 
@@ -37,7 +31,7 @@ const PortfolioCarousel = ({ images, current }) => {
 }
 
 PortfolioCarousel.propTypes = {
-  images: PropTypes.array.isRequired,
+  projects: PropTypes.array.isRequired,
   current: PropTypes.number.isRequired,
 }
 

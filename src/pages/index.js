@@ -16,6 +16,7 @@ import {
   faSitemap,
 } from '@fortawesome/free-solid-svg-icons'
 import { Badge, Card, Col, Row } from 'react-bootstrap'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 const IndexPage = () => {
   const { t } = useTranslation()
@@ -32,6 +33,7 @@ const IndexPage = () => {
                 className="w-100 h-100"
                 src="../images/bg-masthead.jpg"
                 alt="background"
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
             <div className="container h-100">
@@ -137,6 +139,12 @@ const IndexPage = () => {
                 >
                   <Trans>About me</Trans>
                 </a>
+                <a
+                  className="btn btn-primary text-white btn-xl ms-2"
+                  href="/portfolio"
+                >
+                  <Trans>Portfolio</Trans>
+                </a>
               </div>
             </div>
           </section>
@@ -155,6 +163,7 @@ const IndexPage = () => {
                         src="../images/profile.jpg"
                         alt="Théo Camboulive"
                         className="img-thumbnail rounded-circle"
+                        formats={['auto', 'webp', 'avif']}
                       />
                     </div>
                     <div
@@ -195,14 +204,21 @@ const IndexPage = () => {
                       </p>
                     </div>
                   </div>
-                  {process.env.NODE_ENV === 'development' && (
-                    <Link
-                      to="/cv/"
-                      className="btn btn-light btn-xl js-scroll-trigger"
-                    >
-                      <Trans>View my CV</Trans>
-                    </Link>
-                  )}
+                  <Link
+                    // to="/cv/" TODO set cv page
+                    to="https://www.linkedin.com/in/th%C3%A9o-camboulive/"
+                    className="btn btn-light btn-xl js-scroll-trigger"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <FontAwesomeIcon
+                      icon={faLinkedin}
+                      className="me-1 icon"
+                      size="2x"
+                      style={{ verticalAlign: 'middle' }}
+                    />
+                    <Trans>View my profile</Trans>
+                  </Link>
                 </div>
               </div>
             </div>
