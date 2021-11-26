@@ -4,12 +4,10 @@ import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 
-import shareImg from '../images/share-img.jpg'
-
 function SEO({ description, meta, title }) {
   const { languages, language, originalPath, defaultLanguage } = useI18next()
 
-  const { site } = useStaticQuery(
+  const { site, shareImage } = useStaticQuery(
     graphql`
       query {
         site {
@@ -20,11 +18,21 @@ function SEO({ description, meta, title }) {
             siteUrl
           }
         }
+        shareImage: file(relativePath: { eq: "share-img.jpg" }) {
+          childImageSharp {
+            resize(width: 1200) {
+              src
+              height
+              width
+            }
+          }
+        }
       }
     `
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const shareImg = shareImage ? shareImage.childImageSharp.resize : null
 
   return (
     <Helmet
@@ -45,10 +53,9 @@ function SEO({ description, meta, title }) {
           }
         })}
       meta={[
-        // TODO: Remove noindex when page ready for Google
         {
-          name: 'robots',
-          content: 'noindex',
+          name: 'title',
+          content: title,
         },
         {
           name: `description`,
@@ -67,12 +74,28 @@ function SEO({ description, meta, title }) {
           content: `website`,
         },
         {
+          property: `og:url`,
+          content: site.siteMetadata.siteUrl + location.pathname,
+        },
+        {
           name: `og:image`,
-          content: site.siteMetadata.siteUrl + shareImg,
+          content: site.siteMetadata.siteUrl + shareImg.src,
+        },
+        {
+          property: 'og:image:width',
+          content: shareImg.width,
+        },
+        {
+          property: 'og:image:height',
+          content: shareImg.height,
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
+        },
+        {
+          property: `twitter:url`,
+          content: site.siteMetadata.siteUrl + location.pathname,
         },
         {
           name: `twitter:creator`,
@@ -85,6 +108,10 @@ function SEO({ description, meta, title }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: site.siteMetadata.siteUrl + shareImg.src,
         },
       ].concat(meta)}
     />
@@ -101,5 +128,7 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 }
+
+
 
 export default SEO

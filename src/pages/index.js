@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Layout from '../components/layout'
 import Scroller from '../components/scroller'
 import { graphql } from 'gatsby'
@@ -18,7 +18,11 @@ import {
 import { Badge, Card, Col, Row } from 'react-bootstrap'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
+import Glide from 'react-glidejs'
+
+import 'react-glidejs/dist/index.css'
 const IndexPage = () => {
+  const gliderRef = useRef(null)
   const { t } = useTranslation()
 
   Scroller.handleAnchorScroll = Scroller.handleAnchorScroll.bind(this)
@@ -73,6 +77,38 @@ const IndexPage = () => {
                 <Trans key="services">Services</Trans>
               </h2>
               <hr className="divider my-4" />
+              {/* <Glide
+                ref={gliderRef}
+                throttle={0}
+                type="slider"
+                customSlideAnimation={{
+                  timeout: 500,
+                  classNames: 'fade',
+                }}
+                peek={{
+                  before: 500,
+                  after: 500,
+                }}
+                perView={1}
+                startAt={0}
+                slideClassName="slider__frame"
+                focusAt="0"
+              >
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+              </Glide> */}
               <Row xl="5" lg="4" md="3" sm="2" xs="1" className="gy-2 gx-1">
                 {Array.from({ length: 5 }).map((_, idx) => {
                   const icons = [
