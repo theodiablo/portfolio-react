@@ -12,7 +12,7 @@
   "cvPage.title": "CV",
 
   "about.description1": "After years working as a Full Stack developer for several companies <2>(Sopra Steria, Criteo, King—AKA Candy Crush...)</2>, I decided to leave this business world and start working exclusively for sustainable businesses.",
-  "about.description2": "After a 1 year trip around Asia with my life partner, we co-founded <2>Luffa Shop</2>, an online store focused on reducing trash for Spanish households. In 3 years we planted 3\u00a0500+ trees and avoided 15\u00a0000+ kg of plastic waste!",
+  "about.description2": "After a 1 year trip around Asia with my life partner, we founded <2>Luffa Shop</2>, an online store focused on reducing trash for Spanish households. In 3 years we planted 3\u00a0500+ trees and avoided 15\u00a0000+ kg of plastic waste!",
   "about.description3": "During all this time, I have acquired a wide range of technical and business knowledge, which enables me to work through many different business situation.",
 
   "values.title1": "Efficiency & Reliability",
@@ -33,18 +33,14 @@
   "services.body2": "During the years, I have diversified and learnt new Front-End framweorks.",
   "services.skills2": "React, Gatsby, Vue.js, jQuery, HTML5 & CSS3",
   "services.title3": "Architecture & Hosting",
-  "services.body3": "Having worked with many companies with very different profiles, I can develop and setup any kind of environments, from self hosted monolyth to cloud-based microservices with continuous deployment.",
+  "services.body3": "Having worked with many companies with very different profiles, I can develop and setup any kind of environments, from self hosted monolith to cloud-based microservices with continuous deployment.",
   "services.skills3": "AWS, GCP, Kubernetes, Docker, Jenkins, CI Pipelines",
   "services.title4": "Analytics & Monitoring",
   "services.body4": "Knowing what happens in your platform is key to detect any anomaly. Analytics help to gain more confidence in the products and make sure things are working.",
   "services.skills4": "Google Analytics, Elastic Search, Kibana, Alerting",
   "services.title5": "Ecommerce optimization",
-  "services.body5": "Ecommerce CMS can be a nightmare sometimes when you want to do something very basic, I have spent many hours improving ecommerce sites and developing plugins to make ecommerce sites working exactly as expected.",
+  "services.body5": "Ecommerce CMS can be a nightmare sometimes when you want to do something very basic, I have spent many hours improving ecommerce sites and developing plugins to make those sites working exactly as expected.",
   "services.skills5": "Speed Optimization, Woocommerce, Prestashop, SEO, Json+LD",
-
-  "language.en": "English",
-  "language.es": "Español",
-  "language.fr": "Français",
 
   "Théo Camboulive - Full Stack Freelancer": "Théo Camboulive - Full Stack Freelancer",
 
@@ -53,5 +49,9 @@
   "View my profile": "View my profile",
   "Core values": "Core values",
   "Portfolio": "Portfolio",
-  "Projects": "Projects"
+  "Projects": "Projects",
+
+  "language.en": "English",
+  "language.es": "Español",
+  "language.fr": "Français"
 }

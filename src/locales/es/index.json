@@ -4,6 +4,53 @@
   "homePage.headerDescription": "Mientras las Tecnologías de Información causan mucho daño a nivel global, creo que pueden ayudarnos a reconstruir un mundo mejor y más sostenible. Estoy enfocado en esta misión, ayudando empresas sostenibles alrededor del mundo.",
   "homePage.headerButton": "Descubrir más",
 
+  "portfolioPage.title": "Portfolio",
+  "portfolioPage.headerTitle": "<0>Proyectos</0> en los cuales he participado",
+  "portfolioPage.headerDescription": "Aquí puedes ver un listado de algunos proyectos en los cuales he trabajado en los últimos años. He empezado a enfocarme en empresas sostenibles hace poco tiempo, por esto se encuentran todo tipos de proyectos aquí.",
+  "portfolioPage.headerButton": "Ver proyectos",
+
+  "cvPage.title": "CV",
+
+  "about.description1": "Después de varios años trabajando como desarrollador Full Stack para varias empresas <2>(Sopra Steria, Criteo, King — AKA Candy Crush...)</2>, decidí dejar este mundo empresarial y empezar a trabajar exclusivamente para negocios sostenibles.",
+  "about.description2": "Después de un viaje de 1 año por Asia con mi compañera de vida, fundamos <2>Luffa Shop</2>, una tienda online enfocada en reducir la basura para los hogares españoles. ¡En 3 años plantamos más de 3\u00a0500 árboles y evitamos unos 15\u00a0000 kg de residuos plásticos!",
+  "about.description3": "Durante todo este tiempo, he adquirido unos conocimientos técnicos y comerciales muy variados, lo que me permite trabajar en muchas situaciones de negocio diferentes.",
+
+  "values.title1": "Eficiencia & Fiabilidad",
+  "values.desc1": "Diseño soluciones optimizando la velocidad, la computación y el almacenamiento con el objetivo de reducir el impacto en el planeta y el coste para los clientes.",
+  "values.title2": "Comunicación & Sinceridad",
+  "values.desc2": "Creo que la comunicación es la clave para llevar a cabo cualquier proyecto con éxito. Prefiero decir las cosas que molestan temprano en vez de esperar hasta que sea demasiado tarde.",
+  "values.title3": "Profesionalismo",
+  "values.desc3": "Trato a todos mis clientes como iguales. Todo el trabajo que realizo tiene la misma importancia y estándares de calidad. Me gusta verme como parte del equipo de desarrollo de las empresas para las que trabajo.",
+  "values.title4": "Ética",
+  "values.desc4": "Mi objetivo es ayudar para que el mundo a ser un lugar mejor, ayudando a las empresas sostenibles. Rechazo todos los proyectos que no estén alineados con mis valores.",
+
+  "services": "Servicios",
+  "services.skills": "Habilidades",
+  "services.title1": "Back-End",
+  "services.body1": "Empecé mi carrera enfocado más en la parte backend, desde la base de datos hasta devolver una respuesta. He trabajado en unos servicios que gestionan decenas de miles de peticiones por segundo.",
+  "services.skills1": "Java, Php, GoLang, Administración de Bases de Datos (SQL, MongoDb), API Rest",
+  "services.title2": "Front-End",
+  "services.body2": "Con los años, me he diversificado y aprendí varios frameworks Front-End.",
+  "services.skills2": "React, Gatsby, Vue.js, jQuery, HTML5 & CSS3",
+  "services.title3": "Arquitectura & Hosting",
+  "services.body3": "Al haber trabajado con muchas empresas muy diferentes, puedo desarrollar y configurar aplicaciones en cualquier tipo de entornos, desde grandes monolitos autogestionados hasta microservicios en la nube con implementación continua.",
+  "services.skills3": "AWS, GCP, Kubernetes, Docker, Jenkins, CI Pipelines",
+  "services.title4": "Analytics & Monitoring",
+  "services.body4": "Saber qué sucede en una plataforma es clave para detectar cualquier anomalía. El analysis de datos nos ayuda a ganar más confianza en los productos que desarrollamos y a asegurarnos de que todo funcione.",
+  "services.skills4": "Google Analytics, Elastic Search, Kibana, Alertas",
+  "services.title5": "Optimización E-Commerce",
+  "services.body5": "Los CMS de E-Commerce pueden ser una pesadilla a veces, incluso cuando quieres hacer algo muy básico. He pasado muchas horas mejorando sitios de comercio electrónico y desarrollando módulos para que estos sitios funcionen exactamente como se esperaba.",
+  "services.skills5": "Optimization de Velocidad, Woocommerce, Prestashop, SEO, Json+LD",
+
+  "Théo Camboulive - Full Stack Freelancer": "Théo Camboulive - Full Stack Freelancer",
+
+  "About me": "Sobre mí",
+  "View my CV": "Ver mi CV",
+  "View my profile": "Ver mi perfil",
+  "Core values": "Valores",
+  "Portfolio": "Portfolio",
+  "Projects": "Proyectos",
+
   "language.en": "English",
   "language.es": "Español",
   "language.fr": "Français"
