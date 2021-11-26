@@ -81,7 +81,7 @@ function SEO({ description, meta, title, location }) {
         },
         {
           name: `og:image`,
-          content: shareImg.src,
+          content: site.siteMetadata.siteUrl + shareImg.src,
         },
         {
           property: 'og:image:width',
