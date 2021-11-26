@@ -102,7 +102,7 @@ const PortfolioPage = ({ data }) => {
                       kind of experiences here.
                     </Trans>
                   </p>
-                  <Link
+                  {/* <Link
                     className="btn btn-info btn-xl js-scroll-trigger text-capitalize"
                     to="/portfolio/#projects"
                     onClick={Scroller.handleAnchorScroll}
@@ -110,7 +110,7 @@ const PortfolioPage = ({ data }) => {
                     <Trans i18nKey="portfolioPage.headerButton">
                       See projects
                     </Trans>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
