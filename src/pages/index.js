@@ -70,7 +70,7 @@ const IndexPage = () => {
           <section className="page-section" id="services">
             <div className="container">
               <h2 className="text-center mt-0">
-                <Trans>Services</Trans>
+                <Trans key="services">Services</Trans>
               </h2>
               <hr className="divider my-4" />
               <Row xl="5" lg="4" md="3" sm="2" xs="1" className="gy-2 gx-1">
