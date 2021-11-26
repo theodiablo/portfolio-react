@@ -29,7 +29,12 @@ const IndexPage = () => {
 
   return (
     <main>
-      <Layout title={t('homePage.title')} logoVariant="dark" id="homepage">
+      <Layout
+        title={t('homePage.title')}
+        description={t('homePage.description')}
+        logoVariant="dark"
+        id="homepage"
+      >
         <>
           <div className="masthead" id="head">
             <div className="background">

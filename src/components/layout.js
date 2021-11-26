@@ -48,7 +48,7 @@ const Layout = (props) => {
   if (scrolled) className += ' navbar-scrolled'
   return (
     <>
-      <Seo title={props.title} />
+      <Seo title={props.title} description={props.description} />
       <div className={className} ref={siteContainer} id="page-top">
         <Header logoVariant={props.logoVariant} />
         <ScrollTop />
@@ -78,4 +78,5 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   title: PropTypes.string,
+  description: PropTypes.string,
 }
