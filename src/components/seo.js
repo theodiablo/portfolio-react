@@ -39,8 +39,10 @@ function SEO({ description, meta, title, location }) {
       htmlAttributes={{
         language,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={title ? title : site.siteMetadata.title}
+      titleTemplate={
+        title ? `%s | ${site.siteMetadata.title}` : site.siteMetadata.title
+      }
       link={languages
         .filter((lang) => lang !== language)
         .map((lang) => {

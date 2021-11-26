@@ -30,7 +30,6 @@ const IndexPage = ({ location }) => {
   return (
     <main>
       <Layout
-        title={t('homePage.title')}
         description={t('homePage.description')}
         logoVariant="dark"
         id="homepage"
