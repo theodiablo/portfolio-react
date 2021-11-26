@@ -6,14 +6,19 @@ import { Link, Trans, useTranslation } from 'gatsby-plugin-react-i18next'
 import { Col, Container, Row } from 'react-bootstrap'
 import { StaticImage } from 'gatsby-plugin-image'
 
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
   const { t } = useTranslation()
 
   Scroller.handleAnchorScroll = Scroller.handleAnchorScroll.bind(this)
 
   return (
     <main className="bg-dark">
-      <Layout title={t('cvPage.title')} logoVariant="primary" id="cv">
+      <Layout
+        title={t('cvPage.title')}
+        logoVariant="primary"
+        id="cv"
+        location={location}
+      >
         <>
           <div className="header noprint">
             <a id="print-btn" className="btn-big-red">

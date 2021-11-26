@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 
-function SEO({ description, meta, title }) {
+function SEO({ description, meta, title, location }) {
   const { languages, language, originalPath, defaultLanguage } = useI18next()
 
   const { site, shareImage } = useStaticQuery(
@@ -79,7 +79,7 @@ function SEO({ description, meta, title }) {
         },
         {
           name: `og:image`,
-          content: site.siteMetadata.siteUrl + shareImg.src,
+          content: shareImg.src,
         },
         {
           property: 'og:image:width',

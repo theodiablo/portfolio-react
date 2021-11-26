@@ -21,7 +21,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import Glide from 'react-glidejs'
 
 import 'react-glidejs/dist/index.css'
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
   const gliderRef = useRef(null)
   const { t } = useTranslation()
 
@@ -34,6 +34,7 @@ const IndexPage = () => {
         description={t('homePage.description')}
         logoVariant="dark"
         id="homepage"
+        location={location}
       >
         <>
           <div className="masthead" id="head">

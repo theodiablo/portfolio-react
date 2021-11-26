@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import PortfolioModal from '../components/portfolio/modal'
 import PortfolioCarousel from '../components/portfolio/carousel'
 
-const PortfolioPage = ({ data }) => {
+const PortfolioPage = ({ data, location }) => {
   const { t } = useTranslation()
   const [modalShow, setModalShow] = useState(false)
   const [modalCurrent, setModalCurrent] = useState(0)
@@ -55,6 +55,7 @@ const PortfolioPage = ({ data }) => {
         title={t('portfolioPage.title')}
         logoVariant="info"
         id="portfolio"
+        location={location}
       >
         <>
           <div className="portfoliohead" id="head" style={{ display: 'grid' }}>
