@@ -79,7 +79,7 @@ const IndexPage = ({ location }) => {
           <section className="page-section" id="services">
             <div className="container">
               <h2 className="text-center mt-0">
-                <Trans key="services">Services</Trans>
+                <Trans i18nKey="services">Services</Trans>
               </h2>
               <hr className="divider my-4" />
               {/* <Glide
