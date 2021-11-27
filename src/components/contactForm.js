@@ -82,7 +82,7 @@ const ContactForm = () => {
               </Form.Label>
               <Form.Control
                 as="textarea"
-                placeholder={t('Enter your messages')}
+                placeholder={t('Enter your message')}
                 name="message"
                 rows={3}
                 ref={messageInput}
