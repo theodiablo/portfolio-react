@@ -41,7 +41,7 @@ function SEO({ description, meta, title, location }) {
       }}
       title={title ? title : site.siteMetadata.title}
       titleTemplate={
-        title ? `%s | ${site.siteMetadata.title}` : site.siteMetadata.title
+        title && title.trim().length > 0 ? `%s | ${site.siteMetadata.title}` : site.siteMetadata.title
       }
       link={languages
         .filter((lang) => lang !== language)
