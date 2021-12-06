@@ -80,7 +80,7 @@ function SEO({ description, meta, title, location }) {
           content: site.siteMetadata.siteUrl + location.pathname,
         },
         {
-          name: `og:image`,
+          property: `og:image`,
           content: site.siteMetadata.siteUrl + shareImg.src,
         },
         {
