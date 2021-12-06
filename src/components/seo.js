@@ -115,6 +115,10 @@ function SEO({ description, meta, title, location }) {
           name: `twitter:image`,
           content: site.siteMetadata.siteUrl + shareImg.src,
         },
+        {
+          property: `fb:app_id`,
+          content: `430603908555965`
+         }
       ].concat(meta)}
     />
   )
