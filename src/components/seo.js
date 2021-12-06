@@ -33,13 +33,13 @@ function SEO({ description, meta, title, location }) {
 
   const metaDescription = description || site.siteMetadata.description
   const shareImg = shareImage ? shareImage.childImageSharp.resize : null
+  const titleSet = title && title.trim().length > 0
 
   return (
     <Helmet
       htmlAttributes={{
         language,
       }}
-      titleSet = title && title.trim().length > 0
       title={titleSet ? title : site.siteMetadata.title}
       titleTemplate={titleSet ? `%s | ${site.siteMetadata.title}` : site.siteMetadata.title}
       link={languages
