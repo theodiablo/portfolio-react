@@ -33,14 +33,15 @@ function SEO({ description, meta, title, location }) {
 
   const metaDescription = description || site.siteMetadata.description
   const shareImg = shareImage ? shareImage.childImageSharp.resize : null
-  const titleSet = title && title.trim().length > 0
+  const titleSet = title && title.length > 0
+  const titleVar = titleSet ? title : site.siteMetadata.title
 
   return (
     <Helmet
       htmlAttributes={{
         language,
       }}
-      title={titleSet ? title : site.siteMetadata.title}
+      title={titleVar}
       titleTemplate={titleSet ? `%s | ${site.siteMetadata.title}` : site.siteMetadata.title}
       link={languages
         .filter((lang) => lang !== language)
@@ -56,7 +57,7 @@ function SEO({ description, meta, title, location }) {
       meta={[
         {
           name: 'title',
-          content: title,
+          content: titleVar,
         },
         {
           name: `description`,
@@ -64,7 +65,7 @@ function SEO({ description, meta, title, location }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: titleVar,
         },
         {
           property: `og:description`,
@@ -104,7 +105,7 @@ function SEO({ description, meta, title, location }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: titleVar,
         },
         {
           name: `twitter:description`,
