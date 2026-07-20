@@ -1,8 +1,0 @@
-import '@fontsource/josefin-sans/300.css'
-import '@fontsource/josefin-sans/300-italic.css'
-import '@fontsource/josefin-sans/400.css'
-import '@fontsource/josefin-sans/400-italic.css'
-import '@fontsource/josefin-sans/700.css'
-import '@fontsource/josefin-sans/700-italic.css'
-import '@fontsource/merriweather-sans/400.css'
-import '@fontsource/merriweather-sans/700.css'

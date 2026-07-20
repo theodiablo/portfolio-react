@@ -1,50 +1,50 @@
 name: Deploy
 
-
 on:
   workflow_dispatch:
   push:
     branches:
       - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
       - name: Use Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: 14
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - name: Caching Gatsby
-        id: gatsby-cache-build
-        uses: actions/cache@v2
-        with:
-          path: |
-            .cache
-          key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
-          restore-keys: |
-            ${{ runner.os }}-gatsby-build-
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
       - name: Build
-        run: |
-          npm ci
-          npm run build
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        run: npm run build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-2
-      - name: Deploy
-        uses: jonelantha/gatsby-s3-action@v1
-        with:
-          dest-s3-bucket: theo.camboulive.solutions
-          cloudfront-id-to-invalidate: E2JKARQJ6N6ORJ
+
+      - name: Sync to S3
+        run: |
+          # Long-cache the fingerprinted assets, short-cache the HTML entry.
+          aws s3 sync dist/ s3://theo.camboulive.solutions \
+            --delete \
+            --cache-control "public,max-age=31536000,immutable" \
+            --exclude "index.html" --exclude "*.pdf"
+          aws s3 sync dist/ s3://theo.camboulive.solutions \
+            --cache-control "public,max-age=0,must-revalidate" \
+            --exclude "*" --include "index.html" --include "*.pdf"
+
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id E2JKARQJ6N6ORJ \
+            --paths "/*"
