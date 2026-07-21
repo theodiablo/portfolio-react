@@ -1,4 +1,4 @@
-import { ExternalLink, Github } from 'lucide-react'
+import { ArrowRight, ExternalLink, Github } from 'lucide-react'
 import { useLang } from '../i18n/LangContext'
 import { LINKS, RUNNING_STACK } from '../content/data'
 import { Reveal } from '../components/Reveal'
@@ -33,10 +33,16 @@ export function RunningCoach() {
 
             <div className="flex flex-wrap gap-3 pt-4">
               <a
+                href="/running-coach.html"
+                className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+              >
+                {t('work.caseStudy')} <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
                 href={LINKS.runningApp}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 rounded-full border border-line-strong px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-accent hover:text-accent"
               >
                 {t('work.openApp')} <ExternalLink className="h-4 w-4" />
               </a>

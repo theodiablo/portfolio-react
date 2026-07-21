@@ -52,6 +52,7 @@ export const STRINGS = {
     en: 'Full product ownership: a React/TypeScript PWA plus Capacitor iOS/Android shells with native background GPS, serverless AWS deploy, Supabase with row-level security, and PostHog analytics.',
     es: 'Propiedad total del producto: una PWA en React/TypeScript más shells de Capacitor para iOS/Android con GPS nativo en segundo plano, despliegue serverless en AWS, Supabase con seguridad a nivel de fila y analítica con PostHog.',
   },
+  'work.caseStudy': { en: 'Read the case study', es: 'Leer el caso de estudio' },
   'work.openApp': { en: 'Open the app', es: 'Abrir la app' },
   'work.viewCode': { en: 'View the code', es: 'Ver el código' },
 
