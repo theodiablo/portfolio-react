@@ -99,7 +99,7 @@ export const EXPERIENCE: Job[] = [
         period: 'Feb 2025 — Present',
         bullets: [
           {
-            en: 'Directly manage 9 engineers across two cross-functional squads, owning end-to-end delivery from backend data models and services to user-facing features — partnering closely with Product and Design from problem definition to launch.',
+            en: 'Directly manage 9 engineers across two cross-functional squads, owning end-to-end delivery from backend data models and services to user-facing features, partnering closely with Product and Design from problem definition to launch.',
             es: 'Gestiono directamente a 9 ingenieros en dos equipos multidisciplinares, con responsabilidad total sobre la entrega, desde los modelos de datos y servicios de backend hasta las funcionalidades de cara al usuario, en estrecha colaboración con Producto y Diseño.',
           },
           {
@@ -165,11 +165,11 @@ export const EXPERIENCE: Job[] = [
     period: 'Jun 2018 — Sep 2020',
     roles: [
       {
-        title: { en: 'Full-Stack Developer — Shared Technology', es: 'Full-Stack Developer — Shared Technology' },
+        title: { en: 'Full-Stack Developer, Shared Technology', es: 'Full-Stack Developer, Shared Technology' },
         period: 'Jul 2019 — Sep 2020',
         bullets: [
           {
-            en: 'Maintained a core platform service delivering content and messages to 50M+ daily and 200M+ monthly active users across all King games — mission-critical, high-availability infrastructure.',
+            en: 'Maintained a core platform service delivering content and messages to 50M+ daily and 200M+ monthly active users across all King games. Mission-critical, high-availability infrastructure.',
             es: 'Mantuve un servicio core de la plataforma que entregaba contenido y mensajes a más de 50M de usuarios diarios y 200M mensuales en todos los juegos de King: infraestructura crítica de alta disponibilidad.',
           },
         ],
@@ -183,7 +183,7 @@ export const EARLIER_WORK: EarlierWork[] = [
     name: 'Luffa Shop',
     period: '2018 — 2021',
     blurb: {
-      en: 'Co-founded an online zero-waste store for Spanish households. In three years we planted 3,500+ trees and avoided 15,000+ kg of plastic waste — building and running the full e-commerce stack myself.',
+      en: 'Co-founded an online zero-waste store for Spanish households. In three years we planted 3,500+ trees and avoided 15,000+ kg of plastic waste, building and running the full e-commerce stack myself.',
       es: 'Cofundé una tienda online de residuo cero para hogares españoles. En tres años plantamos más de 3.500 árboles y evitamos más de 15.000 kg de residuos plásticos, construyendo y operando yo mismo todo el stack de e-commerce.',
     },
     tags: ['E-commerce', 'PrestaShop', 'Sustainability', 'Founder'],
@@ -192,7 +192,7 @@ export const EARLIER_WORK: EarlierWork[] = [
     name: 'Freelance & earlier roles',
     period: '2013 — 2022',
     blurb: {
-      en: 'Before Ecologi: full-stack consulting for international clients, plus earlier engineering roles at Criteo, Sopra Steria and Worldline — a decade of shipping across the stack in Java, PHP, Go, Node and the front-end.',
+      en: 'Before Ecologi: full-stack consulting for international clients, plus earlier engineering roles at Criteo, Sopra Steria and Worldline. A decade of shipping across the stack in Java, PHP, Go, Node and the front-end.',
       es: 'Antes de Ecologi: consultoría full-stack para clientes internacionales, además de roles previos de ingeniería en Criteo, Sopra Steria y Worldline: una década entregando en todo el stack con Java, PHP, Go, Node y el front-end.',
     },
     tags: ['Criteo', 'Sopra Steria', 'Worldline', 'Consulting'],

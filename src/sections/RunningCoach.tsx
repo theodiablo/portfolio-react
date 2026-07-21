@@ -64,7 +64,7 @@ export function RunningCoach() {
               <ol className="mt-4 space-y-3.5">
                 {[
                   ['Propose', 'The LLM suggests plan edits through bounded, typed tools only.'],
-                  ['Validate', 'A shared validator is the trust boundary — it can reject, never worsen.'],
+                  ['Validate', 'A shared validator is the trust boundary; it can reject, never worsen.'],
                   ['Confirm', 'You apply the change. The model never writes your plan directly.'],
                   ['Evaluate', 'Safety gates + golden tests + live evals; every round is replayable.'],
                 ].map(([step, desc], i) => (

@@ -8,8 +8,8 @@ const NAV: {
   href: string
 }[] = [
   { key: 'nav.leadership', href: '#leadership' },
-  { key: 'nav.work', href: '#work' },
   { key: 'nav.experience', href: '#experience' },
+  { key: 'nav.work', href: '#work' },
   { key: 'nav.ai', href: '#ai' },
   { key: 'nav.about', href: '#about' },
   { key: 'nav.contact', href: '#contact' },

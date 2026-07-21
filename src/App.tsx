@@ -15,8 +15,8 @@ export default function App() {
       <main>
         <Hero />
         <Leadership />
-        <RunningCoach />
         <Experience />
+        <RunningCoach />
         <HowIWorkWithAI />
         <EarlierWork />
         <AboutContact />

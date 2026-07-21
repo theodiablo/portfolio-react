@@ -41,7 +41,7 @@ export const STRINGS = {
     es: 'Una app de running gratuita cuyo entrenador con IA adapta tu plan de entrenamiento en producción.',
   },
   'work.p1': {
-    en: 'The coach is an LLM tool-use agent (Claude API) built as an editor, not an author: a propose-and-confirm loop with bounded typed tools and a shared validator, so the model can adjust a plan but can never break training-safety rules. You stay in control — it proposes, you apply.',
+    en: 'The coach is an LLM tool-use agent (Claude API) built as an editor, not an author: a propose-and-confirm loop with bounded typed tools and a shared validator, so the model can adjust a plan but can never break training-safety rules. You stay in control: it proposes, you apply.',
     es: 'El entrenador es un agente LLM de uso de herramientas (Claude API) construido como editor, no como autor: un bucle de propuesta y confirmación con herramientas tipadas y acotadas y un validador compartido, de modo que el modelo puede ajustar un plan pero nunca romper las reglas de seguridad del entrenamiento. Tú mantienes el control: propone, tú aplicas.',
   },
   'work.p2': {
@@ -81,11 +81,11 @@ export const STRINGS = {
 
   'about.title': { en: 'About', es: 'Sobre mí' },
   'about.p1': {
-    en: 'I’m a French engineering manager based in San Sebastián, working in English, Spanish and French. I care about building software that earns trust — technically solid, well-tested, and honest about what it does.',
+    en: 'I’m a French engineering manager based in San Sebastián, working in English, Spanish and French. I care about building software that earns trust: technically solid, well-tested, and honest about what it does.',
     es: 'Soy un engineering manager francés afincado en San Sebastián, que trabaja en inglés, español y francés. Me importa construir software que se gane la confianza: técnicamente sólido, bien testeado y honesto sobre lo que hace.',
   },
   'about.p2': {
-    en: 'Running Coach started as a personal itch — I run, and I wanted a coach I could actually trust. It became the app I use myself, and a good demonstration of how I think agentic AI should be built.',
+    en: 'Running Coach started as a personal itch. I run, and I wanted a coach I could actually trust. It became the app I use myself, and a good demonstration of how I think agentic AI should be built.',
     es: 'Running Coach empezó como una necesidad personal: corro y quería un entrenador en el que pudiera confiar de verdad. Se convirtió en la app que yo mismo uso y en una buena demostración de cómo creo que debe construirse la IA agéntica.',
   },
 

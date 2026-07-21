@@ -19,7 +19,7 @@ export function RunningCoachPage() {
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-soft">
             I designed, built and run the whole thing: a React/TypeScript PWA, native iOS and Android
             shells, a Supabase edge agent and an eval harness. The code is open source and the app is
-            free — if it helps your training, you can{' '}
+            free, so if it helps your training you can{' '}
             <a
               href="https://buymeacoffee.com/theo.camboulive"
               target="_blank"
@@ -80,7 +80,7 @@ export function RunningCoachPage() {
         <Section eyebrow="The agent" title="An editor, never an author">
           <p>
             A deterministic generator stays the author of plan structure. The model acts only through
-            a bounded set of typed tools — swap a session, add one, cancel one — with no free-text
+            a bounded set of typed tools (swap a session, add one, cancel one) with no free-text
             plan generation. The one load-increasing tool is fenced three ways: it refuses dates in
             the final two weeks and caps distance at your longest existing session, the validator
             gates the resulting week, and the prompt licenses it only for genuine extra availability,
@@ -90,10 +90,10 @@ export function RunningCoachPage() {
             <StepCard n={1} title="Propose" body="The model suggests plan edits through bounded, typed tools only." />
             <StepCard n={2} title="Validate" body="A shared validator is the trust boundary. It can reject a change, never worsen the plan." />
             <StepCard n={3} title="Confirm" body="You apply the change under your own auth. The model never writes your plan directly." />
-            <StepCard n={4} title="Evaluate" body="Every round is logged and replayable — the audit trail is also the eval dataset." />
+            <StepCard n={4} title="Evaluate" body="Every round is logged and replayable; the audit trail is also the eval dataset." />
           </div>
           <ShotRow>
-            <PhoneShot src="/running-coach/03-coach-chat.png" alt="AI coach chat — propose and confirm" />
+            <PhoneShot src="/running-coach/03-coach-chat.png" alt="AI coach chat, propose and confirm" />
           </ShotRow>
         </Section>
 
@@ -102,15 +102,15 @@ export function RunningCoachPage() {
           <p>
             The API key, the tool implementations, the validator, the rate limit and a tamper-proof
             audit log all live in a Supabase edge function. The browser sends a message and renders a
-            proposal — it never sees a key and can’t bypass a rule. Plan writes stay under the user’s
+            proposal. It never sees a key and can’t bypass a rule. Plan writes stay under the user’s
             own row-level-security token; <code className="rounded bg-panel px-1 py-0.5 text-[13px]">confirm</code> does
-            no model call at all — it re-validates the stored proposal and the client persists it.
+            no model call at all: it re-validates the stored proposal and the client persists it.
           </p>
           <ul className="mt-5 space-y-2.5">
-            <Invariant>The model acts only through bounded typed tools — no free-text plan generation.</Invariant>
+            <Invariant>The model acts only through bounded typed tools, with no free-text plan generation.</Invariant>
             <Invariant>One validator, two callers: the agent path and the deterministic generator share the exact same rules.</Invariant>
             <Invariant>An invalid plan is never surfaced. An internal validate-and-retry loop ends in a distinct “no safe adjustment” outcome, never a broken plan or a 500.</Invariant>
-            <Invariant>Context gates reject unsafe intent before the structural validator even runs — pain, injury, illness or a missed-week make-up block the load-increasing tools.</Invariant>
+            <Invariant>Context gates reject unsafe intent before the structural validator even runs. Pain, injury, illness or a missed-week make-up block the load-increasing tools.</Invariant>
             <Invariant>The audit log is service-role only. Users can read their own rounds, never write them. Every round is logged, including failures.</Invariant>
           </ul>
         </Section>
@@ -118,7 +118,7 @@ export function RunningCoachPage() {
         {/* Eval stack */}
         <Section eyebrow="The eval stack" title="AI that ships is AI you can show is behaving">
           <p>
-            Every production round records what the model saw, what it did and how it fared — and that
+            Every production round records what the model saw, what it did and how it fared, and that
             log is the eval dataset. On top of it sit two harnesses over the same proposal loop:
           </p>
           <ul className="mt-5 space-y-2.5">
@@ -130,14 +130,14 @@ export function RunningCoachPage() {
             </Invariant>
             <Invariant>
               <strong className="font-semibold text-ink">Live evals</strong> replay ten realistic
-              scenarios against the real model, graded in two tiers — safety invariants that fail the
+              scenarios against the real model, graded in two tiers: safety invariants that fail the
               run, and quality metrics that are scored but non-blocking. I run them before touching the
               prompt, the tools, the validator or the model.
             </Invariant>
             <Invariant>
-              <strong className="font-semibold text-ink">Headline metrics</strong> — first-proposal
-              acceptance rate, rounds-to-accept, and the abandoned / no-safe-adjustment split — come
-              straight from the same logged rounds.
+              <strong className="font-semibold text-ink">Headline metrics</strong> come straight from
+              the same logged rounds: first-proposal acceptance rate, rounds-to-accept, and the
+              abandoned / no-safe-adjustment split.
             </Invariant>
             <Invariant>
               A <strong className="font-semibold text-ink">“this isn’t right”</strong> control flags the
@@ -152,7 +152,7 @@ export function RunningCoachPage() {
           <div className="rounded-2xl border border-line bg-panel p-6">
             <ol className="space-y-4">
               <ArchRow label="Client" body="React 19 / TypeScript PWA, plus Capacitor iOS & Android shells with native background GPS." />
-              <ArchRow label="Edge agent" body="Supabase edge function — validator, typed tools, rate limit and audit log. Holds the Anthropic key." />
+              <ArchRow label="Edge agent" body="Supabase edge function: validator, typed tools, rate limit and audit log. Holds the Anthropic key." />
               <ArchRow label="Model" body="Claude (Sonnet) via the Anthropic API, tool-use only. Upgrading the model is one secret change." />
               <ArchRow label="Data" body="Supabase Postgres: user state under row-level security, agent audit tables service-role only." />
               <ArchRow label="Ops" body="Serverless AWS static hosting and CloudFront; PostHog for product analytics." />
