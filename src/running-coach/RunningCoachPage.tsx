@@ -18,8 +18,18 @@ export function RunningCoachPage() {
           </p>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-soft">
             I designed, built and run the whole thing: a React/TypeScript PWA, native iOS and Android
-            shells, a Supabase edge agent and an eval harness. The interesting part isn’t generating a
-            plan, it’s making an LLM safe to trust with real training decisions. Here’s how that works.
+            shells, a Supabase edge agent and an eval harness. The code is open source and the app is
+            free — if it helps your training, you can{' '}
+            <a
+              href="https://buymeacoffee.com/theo.camboulive"
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium text-accent underline underline-offset-2 hover:text-accent-deep"
+            >
+              buy me a coffee
+            </a>
+            . The interesting part isn’t generating a plan, it’s making an LLM safe to trust with real
+            training decisions. Here’s how that works.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
@@ -135,20 +145,6 @@ export function RunningCoachPage() {
               critique so the coach can revise in place.
             </Invariant>
           </ul>
-        </Section>
-
-        {/* War story */}
-        <Section eyebrow="A production war story" title="The bug that never threw an error">
-          <p>
-            The nastiest failure in production never raised an exception. The round would succeed
-            server-side, then the streamed response would die before the body reached the phone — a
-            truncated 200 that surfaced as a generic “coach unavailable” bubble. The fix: every request
-            carries a client-generated id, and the round row stores it alongside the exact response
-            body. On a transport-level failure the client polls a no-model
-            <code className="rounded bg-panel px-1 py-0.5 text-[13px]"> result </code> action and replays
-            the stored body — so a dropped connection costs no extra tokens, no second rate-limit
-            charge, and the model call is never re-run.
-          </p>
         </Section>
 
         {/* Architecture */}
