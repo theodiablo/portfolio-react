@@ -8,6 +8,13 @@ export interface Stat {
   label: L10n
 }
 
+/** One dimension of engineering leadership, shown as a card. */
+export interface LeadershipCard {
+  label: L10n
+  lead: L10n
+  body: L10n
+}
+
 export interface Role {
   title: L10n
   period: string

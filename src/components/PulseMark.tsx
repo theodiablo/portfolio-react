@@ -1,17 +1,20 @@
-/** Heartbeat / pulse line rising into a finish dot — the shared brand mark,
- *  echoing the Running Coach "Pulse Stride" logo. Uses currentColor. */
+/** Line-art leaf — the brand mark, nodding to green tech (Ecologi, B Corp).
+ *  Uses currentColor so it inherits the sage accent wherever it's placed. */
 export function PulseMark({ className = '' }: { className?: string }) {
   return (
-    <svg viewBox="0 0 220 120" className={className} role="img" aria-label="Théo Camboulive">
-      <polyline
-        points="6,72 46,72 66,36 92,96 116,20 138,72 176,72"
+    <svg viewBox="0 0 100 100" className={className} role="img" aria-label="Théo Camboulive">
+      <g
         fill="none"
         stroke="currentColor"
-        strokeWidth="10"
+        strokeWidth="7"
         strokeLinecap="round"
         strokeLinejoin="round"
-      />
-      <circle cx="196" cy="72" r="12" fill="currentColor" />
+        transform="rotate(-12 50 50)"
+      >
+        <path d="M50 12 C 70 30, 74 56, 50 80 C 26 56, 30 30, 50 12 Z" />
+        <path d="M50 80 L50 94" />
+        <path d="M50 78 C 49 55, 49 32, 50 15" />
+      </g>
     </svg>
   )
 }

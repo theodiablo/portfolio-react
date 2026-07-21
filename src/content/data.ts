@@ -1,4 +1,4 @@
-import type { Stat, Job, EarlierWork } from './types'
+import type { Stat, Job, EarlierWork, LeadershipCard } from './types'
 
 export const LINKS = {
   email: 'theo.camboulive.dev@gmail.com',
@@ -8,6 +8,54 @@ export const LINKS = {
   runningRepo: 'https://github.com/theodiablo/vibe-coded-run-app',
   cv: '/cv/theo-camboulive-cv.pdf',
 }
+
+/** Compact skill set for the hero profile card — mirrors the CV's Stack column. */
+export const PROFILE_STACK = [
+  'TypeScript',
+  'Node.js',
+  'React',
+  'Python',
+  'PostgreSQL',
+  'AWS',
+  'Docker',
+  'AI-assisted dev',
+]
+
+/** Engineering-leadership dimensions — foregrounds the EM story before the AI project. */
+export const LEADERSHIP: LeadershipCard[] = [
+  {
+    label: { en: 'Team', es: 'Equipo' },
+    lead: { en: '9 engineers, 2 remote squads', es: '9 ingenieros, 2 equipos en remoto' },
+    body: {
+      en: 'I lead two cross-functional teams at a remote-first B Corp, owning the full delivery loop from grooming and cadence to unblocking and technical-debt planning.',
+      es: 'Lidero dos equipos multidisciplinares en una B Corp remota, con responsabilidad sobre todo el ciclo de entrega: desde el refinamiento y la cadencia hasta el desbloqueo y la planificación de deuda técnica.',
+    },
+  },
+  {
+    label: { en: 'Culture', es: 'Cultura' },
+    lead: { en: 'HackDays, every quarter', es: 'HackDays, cada trimestre' },
+    body: {
+      en: 'I conceived and launched a quarterly company-wide hackathon so a distributed team gets to meet in person, invest in learning, and have fun experimenting outside of the product backlog.',
+      es: 'Concebí y lancé un hackathon trimestral para toda la empresa, para que un equipo distribuido se reúna en persona, invierta en aprendizaje y se divierta experimentando fuera del backlog de producto.',
+    },
+  },
+  {
+    label: { en: 'Budget', es: 'Presupuesto' },
+    lead: { en: '+€10,000 saved a year', es: '+10.000 € ahorrados al año' },
+    body: {
+      en: 'I own the engineering budget and cut and consolidated redundant tooling for real annual savings. I also run the R&D Tax Credits process for the whole Product & Engineering team, claiming back +€10,000 a year and lowering the team’s overall costs.',
+      es: 'Gestiono el presupuesto de ingeniería y recorté y unifiqué herramientas redundantes con un ahorro anual real. También llevo el proceso de R&D Tax Credits para todo el equipo de Producto & Ingeniería, recuperando +10.000 € al año y reduciendo los costes globales del equipo.',
+    },
+  },
+  {
+    label: { en: 'People growth', es: 'Desarrollo de personas' },
+    lead: { en: 'A path that didn’t exist', es: 'Un itinerario que no existía' },
+    body: {
+      en: 'I handled 7 promotions on my team, some difficult performance conversations, and contributed to the creation of a bespoke Product Engineer career track for a Staff Engineer who now owns product direction and delivery end to end.',
+      es: 'Gestioné 7 promociones en mi equipo, algunas conversaciones de rendimiento difíciles, y contribuí a la creación de un itinerario de Product Engineer para una Staff Engineer que ahora lidera la dirección de producto y la entrega de principio a fin.',
+    },
+  },
+]
 
 export const HIGHLIGHTS: Stat[] = [
   {
@@ -24,7 +72,7 @@ export const HIGHLIGHTS: Stat[] = [
   },
   {
     value: '1',
-    label: { en: 'agentic AI app running in production', es: 'app de IA agéntica en producción' },
+    label: { en: 'agentic AI app, built end-to-end', es: 'app de IA agéntica, de principio a fin' },
   },
 ]
 
@@ -63,8 +111,8 @@ export const EXPERIENCE: Job[] = [
             es: 'Reconstruí la entrega en un equipo: el volumen mensual de PRs pasó de 65 a 266, se lanzaron 74 releases y se pasó de 2 QAs a cero gracias a una mayor automatización de tests y a la revisión asistida por IA.',
           },
           {
-            en: 'Drove CI/CD improvements: reduced build times by 50% and increased pipeline reliability by 90%. Managed the full people cycle — 3 promotions, a 6-month PIP through to resolution, and independent hiring and compensation decisions.',
-            es: 'Impulsé mejoras de CI/CD: reduje los tiempos de build un 50% y aumenté la fiabilidad del pipeline un 90%. Gestioné el ciclo completo de personas: 3 promociones, un PIP de 6 meses hasta su resolución y decisiones independientes de contratación y compensación.',
+            en: 'Drove CI/CD improvements: reduced build times by 50% and increased pipeline reliability by 90%. Managed the full people cycle: 7 promotions and a 6-month PIP through to resolution.',
+            es: 'Impulsé mejoras de CI/CD: reduje los tiempos de build un 50% y aumenté la fiabilidad del pipeline un 90%. Gestioné el ciclo completo de personas: 7 promociones y un PIP de 6 meses hasta su resolución.',
           },
         ],
       },
@@ -87,8 +135,8 @@ export const EXPERIENCE: Job[] = [
         period: 'Feb 2022 — Jun 2023',
         bullets: [
           {
-            en: 'Designed and built core backend features on the Ecologi Zero platform; took PoCs to live products end-to-end in a TypeScript/Node.js/PostgreSQL stack. Championed test automation and mentored junior engineers.',
-            es: 'Diseñé y construí funcionalidades core de backend en la plataforma Ecologi Zero; llevé PoCs a productos en producción de extremo a extremo con un stack TypeScript/Node.js/PostgreSQL. Impulsé la automatización de tests y mentoricé a ingenieros junior.',
+            en: 'Designed and built core full-stack features on the Ecologi Zero platform, with a React front-end; took PoCs to live products end-to-end in a TypeScript/Node.js/PostgreSQL stack. Championed test automation and mentored junior engineers.',
+            es: 'Diseñé y construí funcionalidades core full-stack en la plataforma Ecologi Zero, con React en el front-end; llevé PoCs a productos en producción de extremo a extremo con un stack TypeScript/Node.js/PostgreSQL. Impulsé la automatización de tests y mentoricé a ingenieros junior.',
           },
         ],
       },
