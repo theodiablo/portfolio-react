@@ -248,10 +248,24 @@ function ShotRow({ children }: { children: React.ReactNode }) {
   return <div className="mt-6 flex flex-wrap justify-center gap-5">{children}</div>
 }
 
+/** Screenshots are full-page scroll captures (very tall). Frame them in a
+ *  fixed phone-shaped viewport, top-aligned, and crop the overflow with a soft
+ *  fade so no single screen dominates the page. */
 function PhoneShot({ src, alt }: { src: string; alt: string }) {
   return (
     <div className="w-[220px] flex-none rounded-[2rem] border border-line-strong bg-[#0b1220] p-2 shadow-lg shadow-black/[0.06]">
-      <img src={src} alt={alt} loading="lazy" className="w-full rounded-[1.5rem]" />
+      <div className="relative aspect-[390/720] overflow-hidden rounded-[1.5rem]">
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover object-top"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-b from-transparent to-[#0b1220]"
+        />
+      </div>
     </div>
   )
 }
