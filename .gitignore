@@ -1,0 +1,14 @@
+node_modules
+dist
+*.local
+.DS_Store
+.vite
+
+# scratch scripts used only for local screenshots
+shot*.mjs
+
+# TS build cache
+*.tsbuildinfo
+
+# local review build (base=./ for file:// preview)
+dist-preview
