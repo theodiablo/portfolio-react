@@ -1,22 +1,26 @@
 @import 'tailwindcss';
-/* Self-hosted Archivo (variable) — same family as the Running Coach app.
-   Imported via @fontsource-variable/archivo in main.tsx. */
+/* Self-hosted Archivo (variable). Imported via @fontsource-variable/archivo in main.tsx. */
 
 @theme {
   --font-sans: 'Archivo Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', 'Menlo', 'Consolas', monospace;
 
-  /* Brand accent — orange-500, matching the app */
-  --color-accent: #f97316;
-  --color-accent-soft: #fb923c;
+  /* Warm off-white + sage green — echoing the CV. */
+  --color-cream: #faf9f5;
+  --color-paper: #ffffff;
+  --color-panel: #f3f2ec;
+  --color-sagewash: #e9efe4;
 
-  /* Dark slate palette */
-  --color-ink: #0b1220;
-  --color-ink-2: #0f172a;
-  --color-surface: #131c2e;
-  --color-surface-2: #1a2436;
-  --color-line: #24314a;
+  --color-ink: #1c1c19;
+  --color-ink-soft: #4b4b44;
+  --color-muted: #7c7c72;
 
-  /* Subtle entrance animations */
+  --color-line: #e5e3da;
+  --color-line-strong: #d3d0c5;
+
+  --color-accent: #456b44;
+  --color-accent-deep: #3a5a39;
+
   --animate-fade-up: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-fade-in: fade-in 0.5s ease both;
 }
@@ -46,11 +50,18 @@ html {
 }
 
 body {
-  background-color: var(--color-ink);
-  color: #e2e8f0;
+  background-color: var(--color-cream);
+  color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* Tracked, monospace small-caps label — the CV's section-label treatment. */
+.label {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
 }
 
 /* Reveal-on-scroll. Content is visible by default (no-JS / crawler safe);
