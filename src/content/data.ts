@@ -5,7 +5,7 @@ export const LINKS = {
   github: 'https://github.com/theodiablo',
   linkedin: 'https://www.linkedin.com/in/théo-camboulive',
   runningApp: 'https://run.camboulive.solutions',
-  runningRepo: 'https://github.com/theodiablo/vibe-coded-run-app',
+  runningRepo: 'https://github.com/theodiablo/running-coach',
   cv: '/cv/theo-camboulive-cv.pdf',
 }
 
